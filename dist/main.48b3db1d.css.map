@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles/main.scss"],"names":[],"mappings":"AAEA;EACE","file":"main.48b3db1d.css","sourceRoot":"../src","sourcesContent":["@import \"variables\";\n\np {\n  color: red;\n}\n"]}
