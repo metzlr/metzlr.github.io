@@ -1,16 +1,36 @@
 doctype html
 html(lang="en")
   head
-    title= pageTitle
+    title Projects
+    meta(name="description" content="Some projects I've made.")
+    link(href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet") 
     link(rel="stylesheet", href="styles/main.scss")
   body
-    h1 Pug - node template engine
-    #container.col
-      p.
-        Pug is a terse and simple templating language with a #[strong HELLO]
-        strong focus on performance and powerful features
-      div
-        p This text belongs to the paragraph tag.
-        br
-        .
-          This text belongs to the div tag.
+    main.main-content
+      h1.section-header Projects
+      include mixins/project-preview
+      - 
+        var projects = [
+          {
+            title: "Hello World!",
+            date: "August 2020",
+            description: "This is a test project!",
+            tags: ["JavaScript", "SASS", "Pug", "another", "another", "2", "asdf"],
+            imageURL: "/images/test-img.jpg",
+            repoLink: "https://github.com",
+            demoLink: "https://github.com",
+          },
+          {
+            title: "Another project",
+            date: "December 2030",
+            description: "This is also a test project",
+            tags: [],
+            imageURL: "/images/test-img.jpg",
+            repoLink: "https://github.com",
+          }
+        ]
+      each project in projects
+        +project-preview(project)
+      
+      

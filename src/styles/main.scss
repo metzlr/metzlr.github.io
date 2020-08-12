@@ -1,5 +1,97 @@
+// @import "modern-normalize/modern-normalize.css";
 @import "variables";
+@import "project-preview.scss";
 
-p {
-  color: red;
+* {
+  box-sizing: border-box;
+}
+
+* + * {
+  margin-top: 1em;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: $body-font;
+  font-weight: $body-font-weight;
+  line-height: $body-line-height;
+  font-size: $font-size;
+  color: $color-text-light-primary;
+  background-color: $color-bg-primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color-text-light-primary;
+  line-height: $header-line-height;
+  font-family: $header-font;
+  font-weight: $header-font-weight;
+}
+
+.main-content {
+  margin: 2rem auto;
+  width: 100vw;
+  max-width: 750px;
+}
+
+.btn {
+  padding: 12px 12px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Montserrat";
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  background-color: $button-color-primary;
+  color: $color-text-light-primary;
+
+  &.btn-github {
+    background-color: #24292e;
+    padding: 12px 12px 12px 45px;
+    color: #fff;
+    background-image: url(../images/github-icon-32px.png);
+    background-size: 25px auto;
+    background-repeat: no-repeat;
+    background-position: 12px center;
+
+    @media screen and (max-width: 650px) {
+      padding: 10px 10px 10px 35px;
+      background-position: 9px center;
+      background-size: 20px auto;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    padding: 10px 10px;
+    font-size: 14px;
+  }
+}
+
+.section-header {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-bottom: 4px solid #fff;
+}
+
+.tag {
+  padding: 4px 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Hind", sans-serif;
+  font-weight: 600;
+  border: solid;
+  border-width: 3px;
+  border-radius: 15px;
+  color: $tag-color-primary;
+  @media screen and (max-width: 650px) {
+    padding: 3px 6px;
+    font-size: 14px;
+  }
 }
