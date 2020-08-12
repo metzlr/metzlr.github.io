@@ -49,12 +49,12 @@ div.project-card-content .project-card-tags {
   justify-content: flex-start;
   align-content: space-between;
 }
-div.project-card-content .project-card-tags * {
+div.project-card-content .project-card-tags > * {
   margin: 0;
-  margin-right: 1em;
+  margin-right: 0.5em;
   margin-top: 0.25em;
 }
-div.project-card-content .project-card-tags:last-child {
+div.project-card-content .project-card-tags :last-child {
   margin-right: 0;
 }
 div.project-card-content .project-card-links {
@@ -63,11 +63,11 @@ div.project-card-content .project-card-links {
   flex-direction: row;
   justify-content: flex-start;
 }
-div.project-card-content .project-card-links * {
+div.project-card-content .project-card-links > * {
   margin: 0;
   margin-right: 1em;
 }
-div.project-card-content .project-card-links:last-child {
+div.project-card-content .project-card-links :last-child {
   margin-right: 0;
 }
 @media screen and (max-width: 550px) {
