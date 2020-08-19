@@ -18,7 +18,7 @@ body {
   line-height: $body-line-height;
   font-size: $font-size;
   color: $color-text-light-primary;
-  background-color: $color-bg-primary;
+  background-color: transparent;
 }
 
 h1,
@@ -31,6 +31,17 @@ h6 {
   line-height: $header-line-height;
   font-family: $header-font;
   font-weight: $header-font-weight;
+}
+
+#background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  border: none;
+  pointer-events: none;
 }
 
 .main-content {
