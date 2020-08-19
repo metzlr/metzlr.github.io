@@ -52,10 +52,7 @@ const main = (function () {
   const canvas = document.getElementById("background-canvas");
   const ctx = canvas.getContext("2d");
 
-  // window.onresize = () => {
-  //   init();
-  //   update();
-  // };
+  resizeCanvas(canvas);
 
   // Constants
   const fps = 60;
@@ -77,9 +74,7 @@ const main = (function () {
     delaunayData;
 
   // Setup scene
-  function init() {
-    resizeCanvas(canvas);
-
+  function setupScene() {
     numCircles = {
       x: Math.floor(canvas.width / 200),
       y: Math.floor(canvas.height / 200),
@@ -96,7 +91,7 @@ const main = (function () {
     createCircles();
   }
 
-  init();
+  setupScene();
   // Initialize update loop. Locked to specific FPS
   let circlesUpdated = false;
   setInterval(update, 1000 / fps);
@@ -106,8 +101,8 @@ const main = (function () {
   function update() {
     const resized = resizeCanvas(canvas);
     if (resized) {
-      // If canvas was resized, update
-      init();
+      // If canvas was resized, reset scene
+      setupScene();
     }
     points = [];
     for (let i = 0; i < circles.length; i++) {
@@ -125,8 +120,8 @@ const main = (function () {
     // Clear canvas
     ctx.fillStyle = "#f0f0f0";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+    // Get delaunay vertex/triangle data and draw triangles
     const delaunayData = delaunay.getTriangleData();
-    // console.log(delaunayData);
     drawTriangles(
       ctx,
       delaunayData.vertices,
