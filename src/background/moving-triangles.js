@@ -49,7 +49,7 @@ class Circle {
 }
 
 const main = (function () {
-  const canvas = document.getElementById("main-canvas");
+  const canvas = document.getElementById("background-canvas");
   const ctx = canvas.getContext("2d");
 
   // window.onresize = () => {
@@ -106,6 +106,7 @@ const main = (function () {
   function update() {
     const resized = resizeCanvas(canvas);
     if (resized) {
+      // If canvas was resized, update
       init();
     }
     points = [];
@@ -119,11 +120,13 @@ const main = (function () {
 
   function draw() {
     if (!circlesUpdated) return;
+    if (delaunay === undefined) return;
     circlesUpdated = false;
     // Clear canvas
     ctx.fillStyle = "#f0f0f0";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     const delaunayData = delaunay.getTriangleData();
+    // console.log(delaunayData);
     drawTriangles(
       ctx,
       delaunayData.vertices,

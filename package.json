@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.pug --no-autoinstall -p 8000",
-    "prod": "parcel build src/index.pug --public-url ./",
+    "prod": "parcel build src/index.pug",
     "clear-build-cache": "rm -rf .cache/ dist/",
     "format": "prettier \"src/**/*.{js,html}\" --write",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "deploy": "parcel build src/index.pug --public-url ./ && gh-pages -d dist -b build"
+    "deploy": "parcel build src/index.pug && gh-pages -d dist -b build"
   },
   "repository": {
     "type": "git",

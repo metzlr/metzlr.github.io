@@ -1,5 +1,6 @@
 // @import "modern-normalize/modern-normalize.css";
-@import "variables";
+@import "fonts.scss";
+@import "variables.scss";
 @import "project-preview.scss";
 
 * {
@@ -33,7 +34,17 @@ h6 {
   font-weight: $header-font-weight;
 }
 
-#background {
+// #background {
+//   position: fixed;
+//   width: 100vw;
+//   height: 100vh;
+//   left: 0;
+//   top: 0;
+//   z-index: -1;
+//   border: none;
+//   pointer-events: none;
+// }
+#background-canvas {
   position: fixed;
   width: 100vw;
   height: 100vh;
