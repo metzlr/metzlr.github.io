@@ -231,6 +231,12 @@ body {
   color: #fff;
   background-color: transparent;
 }
+@media screen and (max-width: 750px) {
+  html,
+body {
+    background-color: #6c63fa;
+  }
+}
 
 h1,
 h2,
@@ -253,6 +259,11 @@ h6 {
   z-index: -1;
   border: none;
   pointer-events: none;
+}
+@media screen and (max-width: 750px) {
+  #background-canvas {
+    display: none;
+  }
 }
 
 .main-content {

@@ -783,26 +783,26 @@ var main = function () {
   resizeCanvas(canvas); // Constants
 
   var fps = 60;
-  var circleColor = "#B5B0FB66";
+  var circleColor = "#B5B0FB88";
   var drawEdges = false;
-  var lineColor = "#B5B0FB66";
+  var lineColor = "#B5B0FB88";
   var lineWidth = 1;
   var triangleBaseColor = {
     h: 244,
     s: 94,
     l: 68
   };
-  var triangleColorRangeL = [-10, 5]; // Non-constants
+  var triangleColorRangeL = [-10, 10]; // Non-constants
 
   var numCircles, circleSpeedRange, circleRadius, circles, idCounter, points, delaunay, delaunayData; // Setup scene
 
   function setupScene() {
     numCircles = {
-      x: Math.floor(canvas.width / 200),
-      y: Math.floor(canvas.height / 200)
+      x: Math.floor(canvas.width / 150),
+      y: Math.floor(canvas.height / 150)
     };
     circleSpeedRange = [0.6, 0.9];
-    circleRadius = Math.min(0.007 * canvas.width, 7);
+    circleRadius = Math.min(0.005 * canvas.height, 7);
     circles = [];
     idCounter = 0;
     points = [];
@@ -839,9 +839,11 @@ var main = function () {
     if (!circlesUpdated) return;
     if (delaunay === undefined) return;
     circlesUpdated = false; // Clear canvas
+    // ctx.fillStyle = "#f0f0f0";
 
-    ctx.fillStyle = "#f0f0f0";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#6c63fa";
+    ctx.fillRect(0, 0, canvas.width, canvas.height); // Get delaunay vertex/triangle data and draw triangles
+
     var delaunayData = delaunay.getTriangleData();
     drawTriangles(ctx, delaunayData.vertices, delaunayData.triangles, drawEdges);
 
@@ -996,7 +998,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44885" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33319" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
