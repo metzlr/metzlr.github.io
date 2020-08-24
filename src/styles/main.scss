@@ -19,7 +19,11 @@ body {
   line-height: $body-line-height;
   font-size: $font-size;
   color: $color-text-light-primary;
+
   background-color: transparent;
+  @media screen and (max-width: 750px) {
+    background-color: $color-bg-primary;
+  }
 }
 
 h1,
@@ -53,6 +57,10 @@ h6 {
   z-index: -1;
   border: none;
   pointer-events: none;
+
+  @media screen and (max-width: 750px) {
+    display: none;
+  }
 }
 
 .main-content {

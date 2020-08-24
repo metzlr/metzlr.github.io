@@ -61,7 +61,7 @@ const main = (function () {
   const lineColor = "#B5B0FB66";
   const lineWidth = 1;
   const triangleBaseColor = { h: 244, s: 94, l: 68 };
-  const triangleColorRangeL = [-10, 5];
+  const triangleColorRangeL = [-10, 10];
 
   // Non-constants
   let numCircles,
@@ -76,12 +76,12 @@ const main = (function () {
   // Setup scene
   function setupScene() {
     numCircles = {
-      x: Math.floor(canvas.width / 200),
-      y: Math.floor(canvas.height / 200),
+      x: Math.floor(canvas.width / 150),
+      y: Math.floor(canvas.height / 150),
     };
 
     circleSpeedRange = [0.6, 0.9];
-    circleRadius = Math.min(0.007 * canvas.width, 7);
+    circleRadius = Math.min(0.005 * canvas.height, 7);
     circles = [];
     idCounter = 0;
 
@@ -118,7 +118,8 @@ const main = (function () {
     if (delaunay === undefined) return;
     circlesUpdated = false;
     // Clear canvas
-    ctx.fillStyle = "#f0f0f0";
+    // ctx.fillStyle = "#f0f0f0";
+    ctx.fillStyle = "#6c63fa";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     // Get delaunay vertex/triangle data and draw triangles
     const delaunayData = delaunay.getTriangleData();
