@@ -56,9 +56,9 @@ const main = (function () {
 
   // Constants
   const fps = 60;
-  const circleColor = "#B5B0FB66";
+  const circleColor = "#B5B0FB88";
   const drawEdges = false;
-  const lineColor = "#B5B0FB66";
+  const lineColor = "#B5B0FB88";
   const lineWidth = 1;
   const triangleBaseColor = { h: 244, s: 94, l: 68 };
   const triangleColorRangeL = [-10, 10];
