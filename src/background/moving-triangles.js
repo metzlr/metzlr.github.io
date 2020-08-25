@@ -137,8 +137,6 @@ const main = (function () {
 
   function render() {
     draw();
-    //resizeCanvas(canvas);
-    //console.log(canvas.width, canvas.height);
 
     requestAnimationFrame(render);
   }
@@ -166,8 +164,6 @@ const main = (function () {
     const dx = canvas.width / (numCircles.x + 1);
     const dy = canvas.height / (numCircles.y + 1);
 
-    // console.log(canvas.width, canvas.height);
-    // console.log(numCircles);
     // Create grid of circles
     const offset = 2;
     for (let i = 0; i <= numCircles.y + 1; i++) {
