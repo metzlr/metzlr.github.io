@@ -76,8 +76,8 @@ const main = (function () {
   // Setup scene
   function setupScene() {
     numCircles = {
-      x: Math.floor(canvas.width / 150),
-      y: Math.floor(canvas.height / 150),
+      x: Math.floor(canvas.clientWidth / 125),
+      y: Math.floor(canvas.clientHeight / 125),
     };
 
     circleSpeedRange = [0.6, 0.9];

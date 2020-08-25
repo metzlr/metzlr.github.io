@@ -101,6 +101,11 @@ h6 {
     padding: 10px 10px;
     font-size: 14px;
   }
+
+  &:hover {
+    cursor: pointer;
+    color: $color-text-light-hover;
+  }
 }
 
 .section-header {
