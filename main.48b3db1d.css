@@ -306,6 +306,10 @@ h6 {
     font-size: 14px;
   }
 }
+.btn:hover {
+  cursor: pointer;
+  color: #eee;
+}
 
 .section-header {
   margin-left: 1rem;

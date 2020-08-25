@@ -798,8 +798,8 @@ var main = function () {
 
   function setupScene() {
     numCircles = {
-      x: Math.floor(canvas.width / 150),
-      y: Math.floor(canvas.height / 150)
+      x: Math.floor(canvas.clientWidth / 125),
+      y: Math.floor(canvas.clientHeight / 125)
     };
     circleSpeedRange = [0.6, 0.9];
     circleRadius = Math.min(0.005 * canvas.height, 7);
@@ -998,7 +998,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40153" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57696" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
