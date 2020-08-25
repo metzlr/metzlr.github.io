@@ -116,13 +116,6 @@ class Delaunay {
     this.faces = []; // Contains index of a half-edge belonging to that face
 
     // Create triangle base triangle that "encapsulates" all points
-
-    // First initialize empty structure
-    // const tempPositions = [
-    //   { x: Number.NEGATIVE_INFINITY, y: Number.POSITIVE_INFINITY },
-    //   { x: Number.POSITIVE_INFINITY, y: Number.POSITIVE_INFINITY },
-    //   { x: Number.NEGATIVE_INFINITY, y: Number.NEGATIVE_INFINITY },
-    // ];
     const FAR_AWAY = 100000;
     const tempPositions = [
       { x: -FAR_AWAY, y: -FAR_AWAY },
@@ -206,10 +199,7 @@ class Delaunay {
       affectedEdges.forEach((edge) => {
         this.legalizeEdge(newVertex, edge);
       });
-
-      //this.debugDraw(this.debugCtx);
     }
-    //this.getTriangleData();
   }
 
   splitTriangle(point, triangle) {
@@ -223,7 +213,7 @@ class Delaunay {
       newHalfEdges.push(
         new HalfEdge({
           origin: leftEdge ? newVertex : undefined,
-          twin: undefined, //this.halfEdges.length + ((i - 1) % 6),
+          twin: undefined,
           incFace: undefined,
           next: undefined,
           prev: undefined,
@@ -260,7 +250,6 @@ class Delaunay {
       e3.incFace = newFace;
 
       newFaces.push(newFace);
-      //const vertices = [e1.origin.pos, e2.origin.pos, e3.origin.pos];
       const vertices = [e1.origin.id, e2.origin.id, e3.origin.id];
       if (
         !this.triangleGraph.addNode(
@@ -282,11 +271,6 @@ class Delaunay {
     this.faces = this.faces.concat(newFaces);
 
     return [newVertex, outerFaceEdges];
-
-    // Debug print new faces
-    // for (let i = 0; i < 3; i++) {
-    //   this.printFace(newFaces[i]);
-    // }
   }
 
   legalizeEdge(newVertex, edge) {
@@ -348,7 +332,6 @@ class Delaunay {
               [face.graphKey, adjacentFace.graphKey],
               newFace.graphKey,
               [v1.id, v2.id, v3.id]
-              //[v1.pos, v2.pos, v3.pos]
             )
           ) {
             console.error("Error adding face to triangle graph:", newFace);
@@ -440,7 +423,6 @@ class Delaunay {
   }
 
   getTriangleData() {
-    //let vertices = this.vertices.slice(3, this.vertices.length);
     let vertices = [];
     for (let i = 3; i < this.vertices.length; i++) {
       vertices.push(this.vertices[i].pos);
@@ -488,8 +470,7 @@ class Delaunay {
             v2 = p3;
           }
         }
-        // console.log(v1, "TO", v2);
-        // console.log(edge, edge.twin);
+
         ctx.moveTo(v1[0], v1[1]);
         ctx.lineTo(v2[0], v2[1]);
         ctx.strokeStyle = "green";
