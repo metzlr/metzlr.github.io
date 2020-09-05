@@ -282,12 +282,6 @@ var Delaunay = /*#__PURE__*/function () {
     this.halfEdges = [];
     this.faces = []; // Contains index of a half-edge belonging to that face
     // Create triangle base triangle that "encapsulates" all points
-    // First initialize empty structure
-    // const tempPositions = [
-    //   { x: Number.NEGATIVE_INFINITY, y: Number.POSITIVE_INFINITY },
-    //   { x: Number.POSITIVE_INFINITY, y: Number.POSITIVE_INFINITY },
-    //   { x: Number.NEGATIVE_INFINITY, y: Number.NEGATIVE_INFINITY },
-    // ];
 
     var FAR_AWAY = 100000;
     var tempPositions = [{
@@ -375,15 +369,14 @@ var Delaunay = /*#__PURE__*/function () {
 
         affectedEdges.forEach(function (edge) {
           _this2.legalizeEdge(newVertex, edge);
-        }); //this.debugDraw(this.debugCtx);
+        });
       };
 
       for (var i = 0; i < this.points.length; i++) {
         var _ret = _loop(i);
 
         if (_ret === "break") break;
-      } //this.getTriangleData();
-
+      }
     }
   }, {
     key: "splitTriangle",
@@ -398,7 +391,6 @@ var Delaunay = /*#__PURE__*/function () {
         newHalfEdges.push(new HalfEdge({
           origin: leftEdge ? newVertex : undefined,
           twin: undefined,
-          //this.halfEdges.length + ((i - 1) % 6),
           incFace: undefined,
           next: undefined,
           prev: undefined
@@ -432,8 +424,7 @@ var Delaunay = /*#__PURE__*/function () {
         e3.next = _e2;
         e3.prev = _e3;
         e3.incFace = newFace;
-        newFaces.push(newFace); //const vertices = [e1.origin.pos, e2.origin.pos, e3.origin.pos];
-
+        newFaces.push(newFace);
         var vertices = [_e2.origin.id, _e3.origin.id, e3.origin.id];
 
         if (!this.triangleGraph.addNode([triangle.graphKey], newFace.graphKey, vertices)) {
@@ -447,10 +438,7 @@ var Delaunay = /*#__PURE__*/function () {
       this.vertices.push(newVertex);
       this.halfEdges = this.halfEdges.concat(newHalfEdges);
       this.faces = this.faces.concat(newFaces);
-      return [newVertex, outerFaceEdges]; // Debug print new faces
-      // for (let i = 0; i < 3; i++) {
-      //   this.printFace(newFaces[i]);
-      // }
+      return [newVertex, outerFaceEdges];
     }
   }, {
     key: "legalizeEdge",
@@ -503,8 +491,7 @@ var Delaunay = /*#__PURE__*/function () {
                 v2 = _this$getFaceVertices2[1],
                 v3 = _this$getFaceVertices2[2];
 
-            if (!this.triangleGraph.addNode([face.graphKey, adjacentFace.graphKey], newFace.graphKey, [v1.id, v2.id, v3.id] //[v1.pos, v2.pos, v3.pos]
-            )) {
+            if (!this.triangleGraph.addNode([face.graphKey, adjacentFace.graphKey], newFace.graphKey, [v1.id, v2.id, v3.id])) {
               console.error("Error adding face to triangle graph:", newFace);
             }
 
@@ -615,7 +602,6 @@ var Delaunay = /*#__PURE__*/function () {
   }, {
     key: "getTriangleData",
     value: function getTriangleData() {
-      //let vertices = this.vertices.slice(3, this.vertices.length);
       var vertices = [];
 
       for (var i = 3; i < this.vertices.length; i++) {
@@ -688,9 +674,7 @@ var Delaunay = /*#__PURE__*/function () {
                 } else {
                   v2 = p3;
                 }
-              } // console.log(v1, "TO", v2);
-              // console.log(edge, edge.twin);
-
+              }
 
               ctx.moveTo(v1[0], v1[1]);
               ctx.lineTo(v2[0], v2[1]);
@@ -856,9 +840,7 @@ var main = function () {
   }
 
   function render() {
-    draw(); //resizeCanvas(canvas);
-    //console.log(canvas.width, canvas.height);
-
+    draw();
     requestAnimationFrame(render);
   }
 
@@ -883,9 +865,7 @@ var main = function () {
   function createCircles() {
     circles = [];
     var dx = canvas.width / (numCircles.x + 1);
-    var dy = canvas.height / (numCircles.y + 1); // console.log(canvas.width, canvas.height);
-    // console.log(numCircles);
-    // Create grid of circles
+    var dy = canvas.height / (numCircles.y + 1); // Create grid of circles
 
     var offset = 2;
 
@@ -1001,7 +981,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45739" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53448" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
