@@ -11,49 +11,49 @@ html(lang="en")
   body
     canvas#background-canvas
     main.main-content
-      h1.section-header Some stuff I've made
-      include mixins/project-preview
-      - 
-        var projects = [
-          {
-            title: "Delaunay-JS",
-            date: "August 2020",
-            description: "A cool looking visualization using my implementation of a Delaunay Triangulization in JavaScript.",
-            tags: ["JavaScript"],
-            imageURL: "/images/projects/delaunay-js/preview.png",
-            repoLink: "https://github.com/metzlr/delaunay-js",
-            demoLink: "https://metzlr.github.io/delaunay-js",
-          },
-          {
-            title: "3D Function Grapher",
-            date: "July 2020",
-            description: "Visualizes 3D functions.",
-            tags: ["JavaScript", "ThreeJS", "Parcel"],
-            imageURL: "/images/projects/grapher3D/preview.png",
-            repoLink: "https://github.com/metzlr/grapher3D",
-            demoLink: "https://metzlr.github.io/grapher3D",
-          },
-          {
-            title: "Maze Mesh Generator",
-            date: "July 2020",
-            description: "Generates a maze. Then makes and spits out a 2D or 3D triangle mesh representing that maze. Demo page draws the 2D meshes with HTML canvas and the 3D ones with WebGL.",
-            tags: ["C++", "WebGL", "JavaScript"],
-            imageURL: "/images/projects/maze-generator/preview.png",
-            repoLink: "https://github.com/metzlr/maze-generator",
-            demoLink: "https://metzlr.github.io/maze-generator",
-          },
-          {
-            title: "MusicFeed",
-            date: "May 2020",
-            description: "A basic site that uses the Spotify API to find new music from artists that you follow or search for.",
-            tags: ["Django", "Bootstrap", "Apache"],
-            imageURL: "/images/projects/musicfeed/icon.png",
-            repoLink: "https://github.com/metzlr/MusicFeed",
-            demoLink: "https://musicfeed.info/",
-          },
-        ]
-      each project in projects
-        +project-preview(project)
+      div.projects-container
+        include mixins/project-preview
+        - 
+          var projects = [
+            {
+              title: "Delaunay-JS",
+              date: "August 2020",
+              description: "A cool looking visualization using my implementation of a Delaunay Triangulization in JavaScript.",
+              tags: ["JavaScript"],
+              imageURL: "/images/projects/delaunay-js/preview.png",
+              repoLink: "https://github.com/metzlr/delaunay-js",
+              demoLink: "https://metzlr.github.io/delaunay-js",
+            },
+            {
+              title: "3D Function Grapher",
+              date: "July 2020",
+              description: "Visualizes 3D functions.",
+              tags: ["JavaScript", "ThreeJS", "Parcel"],
+              imageURL: "/images/projects/grapher3D/preview.png",
+              repoLink: "https://github.com/metzlr/grapher3D",
+              demoLink: "https://metzlr.github.io/grapher3D",
+            },
+            {
+              title: "Maze Mesh Generator",
+              date: "July 2020",
+              description: "Generates a maze. Then makes and spits out a 2D or 3D triangle mesh representing that maze. Demo page draws the 2D meshes with HTML canvas and the 3D ones with WebGL.",
+              tags: ["C++", "WebGL", "JavaScript"],
+              imageURL: "/images/projects/maze-generator/preview.png",
+              repoLink: "https://github.com/metzlr/maze-generator",
+              demoLink: "https://metzlr.github.io/maze-generator",
+            },
+            {
+              title: "MusicFeed",
+              date: "May 2020",
+              description: "A basic site that uses the Spotify API to find new music from artists that you follow or search for.",
+              tags: ["Django", "Bootstrap", "Apache"],
+              imageURL: "/images/projects/musicfeed/icon.png",
+              repoLink: "https://github.com/metzlr/MusicFeed",
+              demoLink: "https://musicfeed.info/",
+            },
+          ]
+        each project in projects
+          +project-preview(project)
 
     script(src="background/moving-triangles.js")
       

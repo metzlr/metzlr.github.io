@@ -21,7 +21,7 @@ body {
   color: $color-text-light-primary;
 
   background-color: transparent;
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 500px) {
     background-color: $color-bg-primary;
   }
 }
@@ -36,6 +36,14 @@ h6 {
   line-height: $header-line-height;
   font-family: $header-font;
   font-weight: $header-font-weight;
+}
+
+a {
+  box-sizing: border-box;
+  text-decoration: none;
+  &:visited {
+    text-decoration: none;
+  }
 }
 
 // #background {
@@ -58,23 +66,39 @@ h6 {
   border: none;
   pointer-events: none;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 500px) {
     display: none;
   }
 }
 
 .main-content {
-  margin: 2rem auto;
+  margin: auto auto;
   width: 100vw;
-  max-width: 750px;
+  max-width: 1000px;
+}
+
+.projects-container {
+  max-width: 880px;
+  display: grid;
+  margin: auto;
+  padding: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  justify-items: center;
+  gap: 2rem;
+
+  @media screen and (max-width: 500px) {
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  }
 }
 
 .btn {
-  padding: 12px 12px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px 10px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
   border: none;
   border-radius: 5px;
@@ -82,29 +106,34 @@ h6 {
   color: $color-text-light-primary;
 
   &.btn-github {
-    background-color: #24292e;
-    padding: 12px 12px 12px 45px;
-    color: #fff;
-    background-image: url(../images/github-icon-32px.png);
-    background-size: 25px auto;
+    //background-color: #24292e;
+    background-color: #222;
+    width: 40px;
+    background-image: url(../images/github-icon-white-64.png);
+    background-size: 30px auto;
     background-repeat: no-repeat;
-    background-position: 12px center;
+    background-position: center center;
 
     @media screen and (max-width: 650px) {
-      padding: 10px 10px 10px 35px;
-      background-position: 9px center;
-      background-size: 20px auto;
+      //padding: 10px 10px 10px 35px;
+      width: 30px;
+      background-size: 22px auto;
     }
   }
 
   @media screen and (max-width: 650px) {
-    padding: 10px 10px;
+    height: 30px;
+    line-height: 30px;
     font-size: 14px;
   }
 
   &:hover {
     cursor: pointer;
     color: $color-text-light-hover;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
   }
 }
 
@@ -115,18 +144,19 @@ h6 {
 }
 
 .tag {
-  padding: 4px 8px;
+  padding: 6px 8px 4px 8px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
   font-family: "Hind", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   border: solid;
-  border-width: 3px;
+  border-width: 2.5px;
   border-radius: 15px;
   color: $tag-color-primary;
   @media screen and (max-width: 650px) {
-    padding: 3px 6px;
+    border-width: 2px;
+    padding: 5.5px 6px 3px 6px;
     font-size: 14px;
   }
 }

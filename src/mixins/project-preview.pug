@@ -2,20 +2,20 @@
 
 mixin project-preview(project)
   article.project-card
+    img.project-card-img(src= project.imageURL alt= project.title)
     .project-card-content
       .project-card-text
         h3= project.title
         h4= project.date
-        p= project.description
 
-      .project-card-footer  
-        .project-card-tags
-          each tag in project.tags
-            .tag= tag
+      .project-card-links
+        if project.repoLink
+          a(href= project.repoLink).btn.btn-github
+        if project.demoLink
+          a(href= project.demoLink).btn Demo
+        //p= project.description
 
-        .project-card-links
-          if project.repoLink
-            a(href= project.repoLink).btn.btn-github Github Repo
-          if project.demoLink
-            a(href= project.demoLink).btn Live Demo
-    img.project-card-img(src= project.imageURL alt= project.title)
+      
+    .project-card-tags
+      each tag in project.tags
+        .tag= tag
