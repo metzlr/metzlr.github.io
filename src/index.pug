@@ -8,6 +8,17 @@ html(lang="en")
     //- Pull favicon from current github profile picture
     link(id="favicon", rel="shortcut icon", type="image/png", href="https://github.com/metzlr.png")
     link(rel="stylesheet", href="styles/main.scss")
+
+    //- Global site tag (gtag.js) - Google Analytics
+    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-179711971-1")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-179711971-1');
+
+
   body
     canvas#background-canvas
     main.main-content
