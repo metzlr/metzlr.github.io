@@ -720,9 +720,10 @@ var Circle = /*#__PURE__*/function () {
         color = _ref.color,
         radius = _ref.radius,
         position = _ref.position,
-        velocity = _ref.velocity,
         staticObject = _ref.staticObject,
-        visible = _ref.visible;
+        visible = _ref.visible,
+        rotationSpeed = _ref.rotationSpeed,
+        curveRate = _ref.curveRate;
 
     _classCallCheck(this, Circle);
 
@@ -730,24 +731,38 @@ var Circle = /*#__PURE__*/function () {
     this.color = color;
     this.radius = radius;
     this.position = position;
-    this.velocity = velocity;
     this.staticObject = staticObject;
     this.visible = visible;
+    this.angle = Math.random() * Math.PI * 2;
+    this.dAngle = (Math.random() > 0.5 ? 1 : -1) * curveRate;
+    this.rotationDirection = {
+      x: (Math.random() > 0.5 ? 1 : -1) * rotationSpeed,
+      y: (Math.random() > 0.5 ? 1 : -1) * rotationSpeed
+    };
   }
 
   _createClass(Circle, [{
     key: "update",
     value: function update(canvas) {
       if (this.staticObject) return;
-      this.position.x += this.velocity.x;
-      this.position.y += this.velocity.y;
+      this.position.x += this.rotationDirection.x * Math.cos(this.angle + this.dAngle);
+      this.position.y += this.rotationDirection.y * Math.sin(this.angle + this.dAngle);
+      this.angle += this.dAngle;
+
+      if (this.angle >= Math.PI * 2) {
+        this.angle = 0;
+      }
+
+      if (Math.random() > 0.99) {
+        this.dAngle *= -1;
+      }
 
       if (this.position.x - this.radius < 0 || this.position.x + this.radius > canvas.width) {
-        this.velocity.x *= -1;
+        this.rotationDirection.x *= -1;
       }
 
       if (this.position.y - this.radius < 0 || this.position.y + this.radius > canvas.height) {
-        this.velocity.y *= -1;
+        this.rotationDirection.y *= -1;
       }
     }
   }, {
@@ -773,18 +788,24 @@ var main = function () {
   var circleColor = "#edededbb";
   var drawEdges = false;
   var lineColor = "#B5B0FB66";
-  var lineWidth = 1;
-  var triangleColorGradient = [[87, 75, 250], [87, 250, 160]]; // Non-constants
+  var lineWidth = 1; // const triangleColorGradient = [
+  //   [87, 75, 250],
+  //   [87, 250, 160],
+  // ];
 
-  var numCircles, circleSpeedRange, circleRadius, circles, idCounter, points, delaunay, delaunayData; // Setup scene
+  var triangleColorGradient = [[0, 219, 222], [252, 0, 255]];
+  var numCircles = {
+    x: Math.floor(canvas.clientWidth / 150),
+    y: Math.floor(canvas.clientHeight / 150)
+  };
+  var circleCurveRateRange = [0.005, 0.02];
+  var circleSpeedRange = [0.5, 1];
+  var circleRadiusRange = [Math.min(0.0025 * canvas.height, 7), Math.min(0.0065 * canvas.height, 9)]; // Non-constants
+
+  var circles, idCounter, points, delaunay; // Setup scene
 
   function setupScene() {
-    numCircles = {
-      x: Math.floor(canvas.clientWidth / 125),
-      y: Math.floor(canvas.clientHeight / 125)
-    };
-    circleSpeedRange = [0.6, 0.9];
-    circleRadius = Math.min(0.003 * canvas.height, 7);
+    // Spacing should not be larger on higher-res displays, so use client width and height
     circles = [];
     idCounter = 0;
     points = [];
@@ -865,21 +886,18 @@ var main = function () {
           x: j * dx,
           y: i * dy
         };
-        var direction = [1, -1];
-        var velocityX = (Math.random() * (circleSpeedRange[1] - circleSpeedRange[0]) + circleSpeedRange[0]) * direction[Math.floor(Math.random() * 2)];
-        var velocityY = (Math.random() * (circleSpeedRange[1] - circleSpeedRange[0]) + circleSpeedRange[0]) * direction[Math.floor(Math.random() * 2)];
+        var rotationSpeed = Math.random() * (circleSpeedRange[1] - circleSpeedRange[0]) + circleSpeedRange[0];
+        var curveRate = Math.random() * (circleCurveRateRange[1] - circleCurveRateRange[0]) + circleCurveRateRange[0];
         var edgeCircle = i === 0 || j === 0 || j === numCircles.x + 1 || i === numCircles.y + 1 ? true : false;
         var circle = new Circle({
           id: idCounter,
           color: circleColor,
-          radius: circleRadius,
+          radius: Math.random() * (circleRadiusRange[1] - circleRadiusRange[0]) + circleRadiusRange[0],
           position: pos,
-          velocity: {
-            x: velocityX,
-            y: velocityY
-          },
+          rotationSpeed: rotationSpeed,
           staticObject: edgeCircle ? true : false,
-          visible: edgeCircle ? false : true
+          visible: edgeCircle ? false : true,
+          curveRate: curveRate
         });
         idCounter++;
         circles.push(circle);
@@ -888,8 +906,8 @@ var main = function () {
   }
 
   function getGradientColor(color1, color2, ratio) {
-    var w1 = 1 - ratio;
-    var w2 = ratio;
+    var w1 = ratio;
+    var w2 = 1 - w1;
     var rgb = [Math.round(color1[0] * w1 + color2[0] * w2), Math.round(color1[1] * w1 + color2[1] * w2), Math.round(color1[2] * w1 + color2[2] * w2)];
     return rgb;
   }
@@ -978,7 +996,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62535" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44965" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
