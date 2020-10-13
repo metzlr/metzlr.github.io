@@ -6,36 +6,52 @@ class Circle {
     color,
     radius,
     position,
-    velocity,
     staticObject,
     visible,
+    rotationSpeed,
+    curveRate,
   }) {
     this.id = id;
     this.color = color;
     this.radius = radius;
     this.position = position;
-    this.velocity = velocity;
     this.staticObject = staticObject;
     this.visible = visible;
+
+    this.angle = Math.random() * Math.PI * 2;
+    this.dAngle = (Math.random() > 0.5 ? 1 : -1) * curveRate;
+    this.rotationDirection = {
+      x: (Math.random() > 0.5 ? 1 : -1) * rotationSpeed,
+      y: (Math.random() > 0.5 ? 1 : -1) * rotationSpeed,
+    };
   }
 
   update(canvas) {
     if (this.staticObject) return;
 
-    this.position.x += this.velocity.x;
-    this.position.y += this.velocity.y;
+    this.position.x +=
+      this.rotationDirection.x * Math.cos(this.angle + this.dAngle);
+    this.position.y +=
+      this.rotationDirection.y * Math.sin(this.angle + this.dAngle);
 
+    this.angle += this.dAngle;
+    if (this.angle >= Math.PI * 2) {
+      this.angle = 0;
+    }
+    if (Math.random() > 0.99) {
+      this.dAngle *= -1;
+    }
     if (
       this.position.x - this.radius < 0 ||
       this.position.x + this.radius > canvas.width
     ) {
-      this.velocity.x *= -1;
+      this.rotationDirection.x *= -1;
     }
     if (
       this.position.y - this.radius < 0 ||
       this.position.y + this.radius > canvas.height
     ) {
-      this.velocity.y *= -1;
+      this.rotationDirection.y *= -1;
     }
   }
 
@@ -60,30 +76,33 @@ const main = (function () {
   const drawEdges = false;
   const lineColor = "#B5B0FB66";
   const lineWidth = 1;
+  // const triangleColorGradient = [
+  //   [87, 75, 250],
+  //   [87, 250, 160],
+  // ];
   const triangleColorGradient = [
-    [87, 75, 250],
-    [87, 250, 160],
+    [0, 219, 222],
+    [252, 0, 255],
+  ];
+
+  const numCircles = {
+    x: Math.floor(canvas.clientWidth / 150),
+    y: Math.floor(canvas.clientHeight / 150),
+  };
+  const circleCurveRateRange = [0.005, 0.02];
+  const circleSpeedRange = [0.5, 1];
+  const circleRadiusRange = [
+    Math.min(0.0025 * canvas.height, 7),
+    Math.min(0.0065 * canvas.height, 9),
   ];
 
   // Non-constants
-  let numCircles,
-    circleSpeedRange,
-    circleRadius,
-    circles,
-    idCounter,
-    points,
-    delaunay,
-    delaunayData;
+  let circles, idCounter, points, delaunay;
 
   // Setup scene
   function setupScene() {
-    numCircles = {
-      x: Math.floor(canvas.clientWidth / 125),
-      y: Math.floor(canvas.clientHeight / 125),
-    };
+    // Spacing should not be larger on higher-res displays, so use client width and height
 
-    circleSpeedRange = [0.6, 0.9];
-    circleRadius = Math.min(0.003 * canvas.height, 7);
     circles = [];
     idCounter = 0;
 
@@ -147,7 +166,6 @@ const main = (function () {
     // device pixels.
     var displayWidth = Math.floor(canvas.clientWidth * realToCSSPixels);
     var displayHeight = Math.floor(canvas.clientHeight * realToCSSPixels);
-
     // Check if the canvas is not the same size.
     if (canvas.width !== displayWidth || canvas.height !== displayHeight) {
       // Make the canvas the same size
@@ -167,15 +185,12 @@ const main = (function () {
     for (let i = 0; i <= numCircles.y + 1; i++) {
       for (let j = 0; j <= numCircles.x + 1; j++) {
         const pos = { x: j * dx, y: i * dy };
-        const direction = [1, -1];
-        const velocityX =
-          (Math.random() * (circleSpeedRange[1] - circleSpeedRange[0]) +
-            circleSpeedRange[0]) *
-          direction[Math.floor(Math.random() * 2)];
-        const velocityY =
-          (Math.random() * (circleSpeedRange[1] - circleSpeedRange[0]) +
-            circleSpeedRange[0]) *
-          direction[Math.floor(Math.random() * 2)];
+        const rotationSpeed =
+          Math.random() * (circleSpeedRange[1] - circleSpeedRange[0]) +
+          circleSpeedRange[0];
+        const curveRate =
+          Math.random() * (circleCurveRateRange[1] - circleCurveRateRange[0]) +
+          circleCurveRateRange[0];
         const edgeCircle =
           i === 0 || j === 0 || j === numCircles.x + 1 || i === numCircles.y + 1
             ? true
@@ -183,11 +198,14 @@ const main = (function () {
         const circle = new Circle({
           id: idCounter,
           color: circleColor,
-          radius: circleRadius,
+          radius:
+            Math.random() * (circleRadiusRange[1] - circleRadiusRange[0]) +
+            circleRadiusRange[0],
           position: pos,
-          velocity: { x: velocityX, y: velocityY },
+          rotationSpeed: rotationSpeed,
           staticObject: edgeCircle ? true : false,
           visible: edgeCircle ? false : true,
+          curveRate: curveRate,
         });
 
         idCounter++;
@@ -197,8 +215,8 @@ const main = (function () {
   }
 
   function getGradientColor(color1, color2, ratio) {
-    var w1 = 1 - ratio;
-    var w2 = ratio;
+    var w1 = ratio;
+    var w2 = 1 - w1;
     var rgb = [
       Math.round(color1[0] * w1 + color2[0] * w2),
       Math.round(color1[1] * w1 + color2[1] * w2),
