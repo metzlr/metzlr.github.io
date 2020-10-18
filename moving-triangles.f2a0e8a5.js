@@ -793,19 +793,20 @@ var main = function () {
   //   [87, 250, 160],
   // ];
 
-  var triangleColorGradient = [[0, 219, 222], [252, 0, 255]];
-  var numCircles = {
-    x: Math.floor(canvas.clientWidth / 150),
-    y: Math.floor(canvas.clientHeight / 150)
-  };
-  var circleCurveRateRange = [0.005, 0.02];
-  var circleSpeedRange = [0.5, 1];
-  var circleRadiusRange = [Math.min(0.0025 * canvas.height, 7), Math.min(0.0065 * canvas.height, 9)]; // Non-constants
+  var triangleColorGradient = [[0, 219, 222], [252, 0, 255]]; // Non-constants
 
-  var circles, idCounter, points, delaunay; // Setup scene
+  var numCircles, circleCurveRateRange, circleSpeedRange, circleRadiusRange, circles, idCounter, points, delaunay; // Setup scene
 
   function setupScene() {
-    // Spacing should not be larger on higher-res displays, so use client width and height
+    // Spacing should not be larger on higher-res displays, so use client width and height to calculate number of circles. Other factors, however, should be scaled based on devicePixelRatio
+    var dpr = window.devicePixelRatio;
+    numCircles = {
+      x: Math.floor(canvas.clientWidth / 150),
+      y: Math.floor(canvas.clientHeight / 150)
+    };
+    circleCurveRateRange = [0.005, 0.02];
+    circleSpeedRange = [0.5 * dpr, 1 * dpr];
+    circleRadiusRange = [Math.min(0.0025 * canvas.height, 7 * dpr), Math.min(0.0065 * canvas.height, 9 * dpr)];
     circles = [];
     idCounter = 0;
     points = [];
@@ -996,7 +997,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44965" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44171" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
