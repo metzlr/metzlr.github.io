@@ -8,7 +8,7 @@
 }
 
 * + * {
-  margin-top: 1em;
+  margin-top: 0.75em;
 }
 
 html,
@@ -21,7 +21,7 @@ body {
   color: $color-text-light-primary;
 
   background-color: transparent;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: $animated-background-cutoff) {
     background-color: $color-bg-primary;
   }
 }
@@ -46,16 +46,6 @@ a {
   }
 }
 
-// #background {
-//   position: fixed;
-//   width: 100vw;
-//   height: 100vh;
-//   left: 0;
-//   top: 0;
-//   z-index: -1;
-//   border: none;
-//   pointer-events: none;
-// }
 #background-canvas {
   position: fixed;
   width: 100vw;
@@ -66,28 +56,45 @@ a {
   border: none;
   pointer-events: none;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: $animated-background-cutoff) {
     display: none;
   }
 }
 
 .main-content {
-  margin: auto auto;
+  // display: flex;
+  // flex-flow: column;
+  // align-items: center;
+  // justify-content: center;
+  margin: auto;
+  padding: 20px 60px;
   width: 100vw;
   max-width: 1000px;
+  height: 100vh;
+
+  @media screen and (max-width: $md) {
+    padding: 10px;
+  }
+
+  @media screen and (max-width: $sm) {
+    padding: 0px;
+  }
 }
 
 .projects-container {
+  // flex-shrink: 0;
+  // flex-grow: 1;
+  // overflow: hidden;
   max-width: 880px;
   display: grid;
   margin: auto;
   padding: 15px;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax($project-preview-width, 1fr));
   justify-items: center;
   gap: 2rem;
 
   @media screen and (max-width: 500px) {
-    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    grid-template-columns: 1fr;
   }
 }
 
@@ -106,7 +113,6 @@ a {
   color: $color-text-light-primary;
 
   &.btn-github {
-    //background-color: #24292e;
     background-color: #222;
     width: 40px;
     background-image: url(../images/github-icon-white-64.png);
@@ -115,7 +121,6 @@ a {
     background-position: center center;
 
     @media screen and (max-width: 650px) {
-      //padding: 10px 10px 10px 35px;
       width: 30px;
       background-size: 22px auto;
     }

@@ -1,9 +1,11 @@
+@import "variables.scss";
+
 article.project-card {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
-  max-width: 400px;
+  max-width: $project-preview-width;
   margin: 0;
 
   padding: 0 0.5em 0.5em 0.5em;
@@ -19,13 +21,14 @@ article.project-card {
   }
 }
 
-div.project-card-content {
+div.project-card-title {
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 
   .project-card-text {
+    margin-right: 5px;
     * {
       margin: 0;
     }
@@ -66,11 +69,12 @@ div.project-card-content {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  align-content: space-between;
+  align-content: center;
+  margin-top: 0.25em;
   & > * {
     margin: 0;
     margin-right: 0.5em;
-    margin-top: 0.25em;
+    margin-top: 0.35em;
   }
   :last-child {
     margin-right: 0;
@@ -83,5 +87,5 @@ img.project-card-img {
   margin: 0;
   object-fit: cover;
   height: 240px;
-  width: 400px;
+  width: $project-preview-width;
 }
