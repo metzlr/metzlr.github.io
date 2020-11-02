@@ -1,105 +1,73 @@
-/* hind-regular - latin */
+/* open-sans-regular - latin */
 @font-face {
-  font-family: "Hind";
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: local("Hind Regular"), local("Hind-Regular"), url("/hind-v10-latin-regular.1979ca31.woff2") format("woff2"), url("/hind-v10-latin-regular.589a5920.woff") format("woff");
+  src: local("Open Sans Regular"), local("OpenSans-Regular"), url("/open-sans-v18-latin-regular.a7fb0f78.woff2") format("woff2"), url("/open-sans-v18-latin-regular.993df29c.woff") format("woff");
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* hind-500 - latin */
+/* open-sans-600 - latin */
 @font-face {
-  font-family: "Hind";
-  font-style: normal;
-  font-weight: 500;
-  src: local("Hind Medium"), local("Hind-Medium"), url("/hind-v10-latin-500.144dd590.woff2") format("woff2"), url("/hind-v10-latin-500.50f1f48e.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* hind-600 - latin */
-@font-face {
-  font-family: "Hind";
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 600;
-  src: local("Hind SemiBold"), local("Hind-SemiBold"), url("/hind-v10-latin-600.b7d7ceb9.woff2") format("woff2"), url("/hind-v10-latin-600.141b7c04.woff") format("woff");
+  src: local("Open Sans SemiBold"), local("OpenSans-SemiBold"), url("/open-sans-v18-latin-600.1c6b047f.woff2") format("woff2"), url("/open-sans-v18-latin-600.5624cb69.woff") format("woff");
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* montserrat-500 - latin */
+/* open-sans-700 - latin */
 @font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 500;
-  src: local("Montserrat Medium"), local("Montserrat-Medium"), url("/montserrat-v14-latin-500.baffc21c.woff2") format("woff2"), url("/montserrat-v14-latin-500.124b25d3.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* montserrat-500italic - latin */
-@font-face {
-  font-family: "Montserrat";
-  font-style: italic;
-  font-weight: 500;
-  src: local("Montserrat Medium Italic"), local("Montserrat-MediumItalic"), url("/montserrat-v14-latin-500italic.dde8c800.woff2") format("woff2"), url("/montserrat-v14-latin-500italic.29b6dd89.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* montserrat-600 - latin */
-@font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 600;
-  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("/montserrat-v14-latin-600.7078f8b1.woff2") format("woff2"), url("/montserrat-v14-latin-600.84035537.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* montserrat-600italic - latin */
-@font-face {
-  font-family: "Montserrat";
-  font-style: italic;
-  font-weight: 600;
-  src: local("Montserrat SemiBold Italic"), local("Montserrat-SemiBoldItalic"), url("/montserrat-v14-latin-600italic.18e50ef1.woff2") format("woff2"), url("/montserrat-v14-latin-600italic.81d158ae.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* montserrat-700 - latin */
-@font-face {
-  font-family: "Montserrat";
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
-  src: local("Montserrat Bold"), local("Montserrat-Bold"), url("/montserrat-v14-latin-700.a8438105.woff2") format("woff2"), url("/montserrat-v14-latin-700.44143fd3.woff") format("woff");
+  src: local("Open Sans Bold"), local("OpenSans-Bold"), url("/open-sans-v18-latin-700.48ba7f00.woff2") format("woff2"), url("/open-sans-v18-latin-700.07bd07fd.woff") format("woff");
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* montserrat-700italic - latin */
+/* open-sans-800 - latin */
 @font-face {
-  font-family: "Montserrat";
-  font-style: italic;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 800;
+  src: local("Open Sans ExtraBold"), local("OpenSans-ExtraBold"), url("/open-sans-v18-latin-800.9f05994e.woff2") format("woff2"), url("/open-sans-v18-latin-800.d2608ba2.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* nunito-regular - latin */
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Nunito Regular"), local("Nunito-Regular"), url("/nunito-v14-latin-regular.13f5aacb.woff2") format("woff2"), url("/nunito-v14-latin-regular.a13de393.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* nunito-600 - latin */
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Nunito SemiBold"), local("Nunito-SemiBold"), url("/nunito-v14-latin-600.511727f7.woff2") format("woff2"), url("/nunito-v14-latin-600.1139f046.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* nunito-700 - latin */
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
   font-weight: 700;
-  src: local("Montserrat Bold Italic"), local("Montserrat-BoldItalic"), url("/montserrat-v14-latin-700italic.05767584.woff2") format("woff2"), url("/montserrat-v14-latin-700italic.412ce110.woff") format("woff");
+  src: local("Nunito Bold"), local("Nunito-Bold"), url("/nunito-v14-latin-700.0a7fd882.woff2") format("woff2"), url("/nunito-v14-latin-700.e1df99d1.woff") format("woff");
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* montserrat-800 - latin */
+/* nunito-800 - latin */
 @font-face {
-  font-family: "Montserrat";
+  font-family: "Nunito";
   font-style: normal;
   font-weight: 800;
-  src: local("Montserrat ExtraBold"), local("Montserrat-ExtraBold"), url("/montserrat-v14-latin-800.1882f41c.woff2") format("woff2"), url("/montserrat-v14-latin-800.1f5d126c.woff") format("woff");
+  src: local("Nunito ExtraBold"), local("Nunito-ExtraBold"), url("/nunito-v14-latin-800.1695a8d8.woff2") format("woff2"), url("/nunito-v14-latin-800.91a406f8.woff") format("woff");
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* montserrat-800italic - latin */
+/* nunito-900 - latin */
 @font-face {
-  font-family: "Montserrat";
-  font-style: italic;
-  font-weight: 800;
-  src: local("Montserrat ExtraBold Italic"), local("Montserrat-ExtraBoldItalic"), url("/montserrat-v14-latin-800italic.83342ad6.woff2") format("woff2"), url("/montserrat-v14-latin-800italic.40a30a66.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* montserrat-900 - latin */
-@font-face {
-  font-family: "Montserrat";
+  font-family: "Nunito";
   font-style: normal;
   font-weight: 900;
-  src: local("Montserrat Black"), local("Montserrat-Black"), url("/montserrat-v14-latin-900.6bd99115.woff2") format("woff2"), url("/montserrat-v14-latin-900.ca5c6266.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* montserrat-900italic - latin */
-@font-face {
-  font-family: "Montserrat";
-  font-style: italic;
-  font-weight: 900;
-  src: local("Montserrat Black Italic"), local("Montserrat-BlackItalic"), url("/montserrat-v14-latin-900italic.8e073909.woff2") format("woff2"), url("/montserrat-v14-latin-900italic.3767d5c8.woff") format("woff");
+  src: local("Nunito Black"), local("Nunito-Black"), url("/nunito-v14-latin-900.6670e4e0.woff2") format("woff2"), url("/nunito-v14-latin-900.be0846cb.woff") format("woff");
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 article.project-card {
@@ -107,7 +75,7 @@ article.project-card {
   flex-flow: column nowrap;
   justify-content: flex-start;
   width: 100%;
-  max-width: 400px;
+  max-width: 422px;
   margin: 0;
   padding: 0 0.5em 0.5em 0.5em;
   background-color: #fff;
@@ -137,7 +105,7 @@ div.project-card-title .project-card-text * {
 }
 div.project-card-title .project-card-text h3 {
   color: #47484f;
-  font-weight: 700;
+  font-weight: 800;
 }
 div.project-card-title .project-card-text h4 {
   color: #656670;
@@ -152,6 +120,7 @@ div.project-card-title .project-card-links {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: stretch;
 }
 div.project-card-title .project-card-links > * {
   margin: 0;
@@ -183,7 +152,7 @@ img.project-card-img {
   margin: 0;
   object-fit: cover;
   height: 240px;
-  width: 400px;
+  width: 422px;
 }
 
 * {
@@ -191,13 +160,13 @@ img.project-card-img {
 }
 
 * + * {
-  margin-top: 0.75em;
+  margin-top: 1em;
 }
 
 html,
 body {
   margin: 0;
-  font-family: "Hind", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 500;
   line-height: 1;
   font-size: 18px;
@@ -219,8 +188,8 @@ h5,
 h6 {
   color: #fff;
   line-height: 1.4;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 800;
+  font-family: "Nunito", sans-serif;
+  font-weight: 900;
 }
 
 a {
@@ -249,75 +218,133 @@ a:visited {
 
 .main-content {
   margin: auto;
-  padding: 20px 60px;
+  padding: 30px 60px;
   width: 100vw;
   max-width: 1000px;
   height: 100vh;
 }
-@media screen and (max-width: 769px) {
-  .main-content {
-    padding: 10px;
-  }
-}
 @media screen and (max-width: 481px) {
   .main-content {
-    padding: 0px;
+    padding: 20px 40px;
+  }
+}
+
+.profile {
+  background-color: #fff;
+  border: none;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0px 0px 18px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.profile * {
+  color: #47484f;
+}
+.profile * + * {
+  margin-top: 0;
+  margin-left: 1.5em;
+}
+@media screen and (max-width: 530px) {
+  .profile {
+    flex-flow: column nowrap;
+  }
+  .profile * + * {
+    margin-left: 0;
+    margin-top: 1em;
+  }
+}
+.profile .profile-image {
+  max-width: 150px;
+  min-width: 75px;
+  border-radius: 100px;
+  box-shadow: -3px 8px 15px 5px rgba(0, 0, 0, 0.3);
+}
+.profile .profile-text > * {
+  margin: 0;
+}
+.profile .profile-text .title {
+  font-weight: 700;
+}
+.profile .profile-text .socials {
+  margin-top: 1em;
+}
+@media screen and (max-width: 481px) {
+  .profile .profile-text {
+    font-size: 15px;
   }
 }
 
 .projects-container {
-  max-width: 880px;
+  margin-top: 2em;
+  padding-bottom: 2em;
   display: grid;
-  margin: auto;
-  padding: 15px;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(422px, 1fr));
   justify-items: center;
-  gap: 2rem;
+  gap: 36px;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 769px) {
   .projects-container {
     grid-template-columns: 1fr;
   }
 }
 
+a.btn {
+  display: block;
+  width: max-content;
+}
+
 .btn {
-  height: 40px;
-  line-height: 40px;
-  padding: 0px 10px;
-  text-align: center;
+  padding: 11px 10px;
   text-decoration: none;
   font-size: 16px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 700;
   border: none;
-  border-radius: 5px;
+  border-radius: 9px;
   background-color: #fa6863;
   color: #fff;
 }
-.btn.btn-github {
+.btn.btn-github-small {
   background-color: #222;
-  width: 40px;
+  padding: 20px 20px;
   background-image: url(/github-icon-white-64.8e89abf4.png);
   background-size: 30px auto;
   background-repeat: no-repeat;
   background-position: center center;
 }
 @media screen and (max-width: 650px) {
+  .btn.btn-github-small {
+    padding: 17px 17px;
+    background-size: 22px auto;
+  }
+}
+.btn.btn-github {
+  background-color: #222;
+  padding-left: 45px;
+  background-image: url(/github-icon-white-64.8e89abf4.png);
+  background-size: 30px auto;
+  background-repeat: no-repeat;
+  background-position: 8% 50%;
+}
+@media screen and (max-width: 650px) {
   .btn.btn-github {
-    width: 30px;
+    padding-left: 35px;
     background-size: 22px auto;
   }
 }
 @media screen and (max-width: 650px) {
   .btn {
-    height: 30px;
-    line-height: 30px;
+    padding: 10px 10px;
     font-size: 14px;
   }
 }
 .btn:hover {
   cursor: pointer;
-  color: #eee;
+  color: #ddd;
 }
 .btn:active {
   position: relative;
@@ -331,12 +358,12 @@ a:visited {
 }
 
 .tag {
-  padding: 6px 8px 4px 8px;
+  padding: 6px 8px 5px 8px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  font-family: "Hind", sans-serif;
-  font-weight: 500;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
   border: solid;
   border-width: 2.5px;
   border-radius: 15px;
