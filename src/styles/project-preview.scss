@@ -9,7 +9,7 @@ article.project-card {
   margin: 0;
 
   padding: 0 0.5em 0.5em 0.5em;
-  background-color: $color-bg-secondary;
+  background-color: $color-bg-light;
   border-style: solid;
   border-width: 0px;
   border-radius: 15px;
@@ -35,7 +35,7 @@ div.project-card-title {
 
     h3 {
       color: $color-text-dark-primary;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     h4 {
@@ -54,7 +54,7 @@ div.project-card-title {
     display: flex;
     flex-direction: row;
     justify-content: center;
-
+    align-items: stretch;
     & > * {
       margin: 0;
       margin-right: 0.5em;

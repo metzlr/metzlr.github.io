@@ -8,7 +8,7 @@
 }
 
 * + * {
-  margin-top: 0.75em;
+  margin-top: 1em;
 }
 
 html,
@@ -63,65 +63,131 @@ a {
 
 .main-content {
   margin: auto;
-  padding: 20px 60px;
+  padding: 30px 60px;
   width: 100vw;
   max-width: 1000px;
   height: 100vh;
 
-  @media screen and (max-width: $md) {
-    padding: 10px;
+  @media screen and (max-width: $sm) {
+    padding: 20px 40px;
+  }
+}
+
+.profile {
+  background-color: $color-bg-light;
+  border: none;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: $box-shadow;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  & * {
+    color: $color-text-dark-primary;
   }
 
-  @media screen and (max-width: $sm) {
-    padding: 0px;
+  * + * {
+    margin-top: 0;
+    margin-left: 1.5em;
+  }
+
+  @media screen and (max-width: 530px) {
+    flex-flow: column nowrap;
+    * + * {
+      margin-left: 0;
+      margin-top: 1em;
+    }
+  }
+
+  .profile-image {
+    max-width: 150px;
+    min-width: 75px;
+    border-radius: 100px;
+    box-shadow: -3px 8px 15px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .profile-text {
+    & > * {
+      margin: 0;
+    }
+
+    .title {
+      font-weight: 700;
+    }
+
+    .socials {
+      margin-top: 1em;
+    }
+
+    @media screen and (max-width: $sm) {
+      font-size: 15px;
+    }
   }
 }
 
 .projects-container {
-  max-width: 880px;
+  margin-top: 2em;
+  padding-bottom: 2em;
   display: grid;
-  margin: auto;
-  padding: 15px;
   grid-template-columns: repeat(auto-fit, minmax($project-preview-width, 1fr));
   justify-items: center;
-  gap: 2rem;
+  gap: 36px;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: $md) {
     grid-template-columns: 1fr;
   }
 }
 
+a.btn {
+  display: block;
+  width: max-content;
+}
+
 .btn {
-  height: 40px;
-  line-height: 40px;
-  padding: 0px 10px;
-  text-align: center;
+  padding: 11px 10px;
   text-decoration: none;
   font-size: 16px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 700;
   border: none;
-  border-radius: 5px;
+  border-radius: 9px;
   background-color: $button-color-primary;
   color: $color-text-light-primary;
 
-  &.btn-github {
+  &.btn-github-small {
     background-color: #222;
-    width: 40px;
+    padding: 20px 20px;
     background-image: url(../images/github-icon-white-64.png);
     background-size: 30px auto;
     background-repeat: no-repeat;
     background-position: center center;
 
     @media screen and (max-width: 650px) {
-      width: 30px;
+      padding: 17px 17px;
+      background-size: 22px auto;
+    }
+  }
+
+  &.btn-github {
+    background-color: #222;
+    padding-left: 45px;
+    background-image: url(../images/github-icon-white-64.png);
+    background-size: 30px auto;
+    background-repeat: no-repeat;
+    background-position: 8% 50%;
+
+    @media screen and (max-width: 650px) {
+      padding-left: 35px;
       background-size: 22px auto;
     }
   }
 
   @media screen and (max-width: 650px) {
-    height: 30px;
-    line-height: 30px;
+    padding: 10px 10px;
     font-size: 14px;
   }
 
@@ -142,12 +208,12 @@ a {
 }
 
 .tag {
-  padding: 6px 8px 4px 8px;
+  padding: 6px 8px 5px 8px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  font-family: "Hind", sans-serif;
-  font-weight: 500;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
   border: solid;
   border-width: 2.5px;
   border-radius: 15px;
