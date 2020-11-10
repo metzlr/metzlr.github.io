@@ -87,46 +87,47 @@ article.project-card {
 }
 @media screen and (max-width: 500px) {
   article.project-card {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 
-div.project-card-title {
+div.project-card-header {
   display: flex;
   flex-flow: row nowrap;
   align-items: flex-start;
   justify-content: space-between;
+  margin-top: 0.5em;
 }
-div.project-card-title .project-card-text {
+div.project-card-header .project-card-text {
   margin-right: 5px;
 }
-div.project-card-title .project-card-text * {
+div.project-card-header .project-card-text * {
   margin: 0;
 }
-div.project-card-title .project-card-text h3 {
+div.project-card-header .project-card-text h3 {
   color: #47484f;
   font-weight: 800;
 }
-div.project-card-title .project-card-text h4 {
+div.project-card-header .project-card-text h4 {
   color: #656670;
   font-weight: 600;
 }
-div.project-card-title .project-card-text p {
+div.project-card-header .project-card-text p {
   margin-top: 0.75em;
   color: #656670;
 }
-div.project-card-title .project-card-links {
+div.project-card-header .project-card-links {
   margin-top: 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: stretch;
 }
-div.project-card-title .project-card-links > * {
+div.project-card-header .project-card-links > * {
   margin: 0;
   margin-right: 0.5em;
 }
-div.project-card-title .project-card-links :last-child {
+div.project-card-header .project-card-links :last-child {
   margin-right: 0;
 }
 
@@ -135,7 +136,7 @@ div.project-card-title .project-card-links :last-child {
   flex-flow: row wrap;
   justify-content: flex-start;
   align-content: center;
-  margin-top: 0.25em;
+  margin-top: 0.4em;
 }
 .project-card-tags > * {
   margin: 0;
@@ -171,13 +172,16 @@ body {
   line-height: 1;
   font-size: 18px;
   color: #fff;
-  background-color: transparent;
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 481px) {
   html,
 body {
-    background-color: #6c63fa;
+    font-size: 17px;
   }
+}
+
+body {
+  background-color: #333;
 }
 
 h1,
@@ -206,14 +210,9 @@ a:visited {
   height: 100vh;
   left: 0;
   top: 0;
-  z-index: -1;
+  z-index: -10;
   border: none;
   pointer-events: none;
-}
-@media screen and (max-width: 450px) {
-  #background-canvas {
-    display: none;
-  }
 }
 
 .main-content {
@@ -274,7 +273,7 @@ a:visited {
 }
 @media screen and (max-width: 481px) {
   .profile .profile-text {
-    font-size: 15px;
+    font-size: 17px;
   }
 }
 
@@ -298,7 +297,7 @@ a.btn {
 }
 
 .btn {
-  padding: 11px 10px;
+  padding: 12px 10px 11px 10px;
   text-decoration: none;
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
@@ -316,7 +315,7 @@ a.btn {
   background-repeat: no-repeat;
   background-position: center center;
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 481px) {
   .btn.btn-github-small {
     padding: 17px 17px;
     background-size: 22px auto;
@@ -330,13 +329,13 @@ a.btn {
   background-repeat: no-repeat;
   background-position: 8% 50%;
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 481px) {
   .btn.btn-github {
     padding-left: 35px;
     background-size: 22px auto;
   }
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 481px) {
   .btn {
     padding: 10px 10px;
     font-size: 14px;
@@ -358,22 +357,22 @@ a.btn {
 }
 
 .tag {
-  padding: 6px 8px 5px 8px;
+  padding: 3px 8px 4px 8px;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
-  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
   font-weight: 700;
   border: solid;
   border-width: 2.5px;
   border-radius: 15px;
-  color: #bd58fd;
+  color: #ae2eff;
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 481px) {
   .tag {
     border-width: 2px;
-    padding: 5.5px 6px 3px 6px;
-    font-size: 14px;
+    padding: 2px 7px 3px 7px;
+    font-size: 13px;
   }
 }
 
