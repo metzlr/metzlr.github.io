@@ -2,8 +2,8 @@
 
 mixin project-preview(project)
   article.project-card
-    img.project-card-img(src= project.imageURL alt= project.title)
-    .project-card-title
+    img.project-card-img(src= project.imageURL alt= project.name)
+    .project-card-header
       .project-card-text
         h3= project.name
         h4= project.date

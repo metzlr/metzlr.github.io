@@ -20,10 +20,13 @@ body {
   font-size: $font-size;
   color: $color-text-light-primary;
 
-  background-color: transparent;
-  @media screen and (max-width: $animated-background-cutoff) {
-    background-color: $color-bg-primary;
+  @media screen and (max-width: $sm) {
+    font-size: $font-size - 1;
   }
+}
+
+body {
+  background-color: $color-bg-primary;
 }
 
 h1,
@@ -52,13 +55,9 @@ a {
   height: 100vh;
   left: 0;
   top: 0;
-  z-index: -1;
+  z-index: -10;
   border: none;
   pointer-events: none;
-
-  @media screen and (max-width: $animated-background-cutoff) {
-    display: none;
-  }
 }
 
 .main-content {
@@ -124,7 +123,7 @@ a {
     }
 
     @media screen and (max-width: $sm) {
-      font-size: 15px;
+      font-size: 17px;
     }
   }
 }
@@ -148,14 +147,14 @@ a.btn {
 }
 
 .btn {
-  padding: 11px 10px;
+  padding: 12px 10px 11px 10px;
   text-decoration: none;
-  font-size: 16px;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 700;
+  font-size: $btn-font-size;
+  font-family: $btn-font-family;
+  font-weight: $btn-font-weight;
   border: none;
   border-radius: 9px;
-  background-color: $button-color-primary;
+  background-color: $btn-color-primary;
   color: $color-text-light-primary;
 
   &.btn-github-small {
@@ -166,7 +165,7 @@ a.btn {
     background-repeat: no-repeat;
     background-position: center center;
 
-    @media screen and (max-width: 650px) {
+    @media screen and (max-width: $sm) {
       padding: 17px 17px;
       background-size: 22px auto;
     }
@@ -180,15 +179,15 @@ a.btn {
     background-repeat: no-repeat;
     background-position: 8% 50%;
 
-    @media screen and (max-width: 650px) {
+    @media screen and (max-width: $sm) {
       padding-left: 35px;
       background-size: 22px auto;
     }
   }
 
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: $sm) {
     padding: 10px 10px;
-    font-size: 14px;
+    font-size: $btn-font-size-sm;
   }
 
   &:hover {
@@ -208,19 +207,19 @@ a.btn {
 }
 
 .tag {
-  padding: 6px 8px 5px 8px;
+  padding: 3px 8px 4px 8px;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
-  font-family: "Nunito", sans-serif;
-  font-weight: 700;
+  font-size: $tag-font-size;
+  font-family: $tag-font-family;
+  font-weight: $tag-font-weight;
   border: solid;
   border-width: 2.5px;
   border-radius: 15px;
   color: $tag-color-primary;
-  @media screen and (max-width: 650px) {
+  @media screen and (max-width: $sm) {
     border-width: 2px;
-    padding: 5.5px 6px 3px 6px;
-    font-size: 14px;
+    padding: 2px 7px 3px 7px;
+    font-size: $tag-font-size-sm;
   }
 }

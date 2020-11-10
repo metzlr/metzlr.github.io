@@ -17,15 +17,17 @@ article.project-card {
   box-shadow: $box-shadow;
 
   @media screen and (max-width: 500px) {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 
-div.project-card-title {
+div.project-card-header {
   display: flex;
   flex-flow: row nowrap;
   align-items: flex-start;
   justify-content: space-between;
+
+  margin-top: 0.5em;
 
   .project-card-text {
     margin-right: 5px;
@@ -70,7 +72,7 @@ div.project-card-title {
   flex-flow: row wrap;
   justify-content: flex-start;
   align-content: center;
-  margin-top: 0.25em;
+  margin-top: 0.4em;
   & > * {
     margin: 0;
     margin-right: 0.5em;

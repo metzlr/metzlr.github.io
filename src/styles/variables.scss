@@ -1,4 +1,4 @@
-$color-bg-primary: #6c63fa;
+$color-bg-primary: #333; //#6c63fa;
 $color-bg-light: #fff; // #ececed;
 $color-bg-dark: #47484f;
 $color-text-light-primary: #fff; // #ececed;
@@ -6,9 +6,19 @@ $color-text-light-hover: #ddd;
 $color-text-dark-primary: #47484f;
 $color-text-dark-secondary: #656670;
 
-$button-color-primary: #fa6863;
+$btn-color-primary: #fa6863;
+$btn-font-family: "Open Sans", sans-serif;
+$btn-font-weight: 700;
+$btn-font-size: 16px;
+$btn-font-size-sm: 14px;
+$btn-font: 700 16px "Open Sans", sans-serif;
+$btn-font-sm: 700 14px "Open Sans", sans-serif;
 
-$tag-color-primary: #bd58fd; //#913cc7; //#fade4b; //#dffa4b; //#3c34ad; //#bd58fd; //#fab463;
+$tag-color-primary: #ae2eff; //#913cc7; //#fade4b; //#dffa4b; //#3c34ad; //#bd58fd; //#fab463;
+$tag-font-size: 14px;
+$tag-font-size-sm: 13px;
+$tag-font-family: "Open Sans", sans-serif;
+$tag-font-weight: 700;
 
 $sm: 481px;
 $md: 769px;
