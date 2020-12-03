@@ -90,67 +90,67 @@ article.project-card {
     font-size: 17px;
   }
 }
-
-div.project-card-header {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-top: 0.5em;
-}
-div.project-card-header .project-card-text {
-  margin-right: 5px;
-}
-div.project-card-header .project-card-text * {
+article.project-card * {
   margin: 0;
 }
-div.project-card-header .project-card-text h3 {
+article.project-card .project-card-content {
+  margin-top: 0.7em;
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+article.project-card .project-card-content h3 {
   color: #47484f;
   font-weight: 800;
 }
-div.project-card-header .project-card-text h4 {
+article.project-card .project-card-content h4 {
   color: #656670;
   font-weight: 600;
 }
-div.project-card-header .project-card-text p {
-  margin-top: 0.75em;
+article.project-card .project-card-content p {
   color: #656670;
+  font-weight: 500;
 }
-div.project-card-header .project-card-links {
-  margin-top: 0;
+article.project-card .project-card-content .top-aligned .project-card-header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+article.project-card .project-card-content .top-aligned .project-card-header .project-card-links {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: stretch;
 }
-div.project-card-header .project-card-links > * {
-  margin: 0;
+article.project-card .project-card-content .top-aligned .project-card-header .project-card-links > * {
   margin-right: 0.5em;
 }
-div.project-card-header .project-card-links :last-child {
+article.project-card .project-card-content .top-aligned .project-card-header .project-card-links :last-child {
   margin-right: 0;
 }
-
-.project-card-tags {
+article.project-card .project-card-content .top-aligned .project-card-body {
+  margin-top: 0.5em;
+}
+article.project-card .project-card-content .bottom-aligned.project-card-tags {
+  margin-top: 0.5em;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   align-content: center;
-  margin-top: 0.4em;
 }
-.project-card-tags > * {
+article.project-card .project-card-content .bottom-aligned.project-card-tags > * {
   margin: 0;
   margin-right: 0.5em;
   margin-top: 0.35em;
 }
-.project-card-tags :last-child {
+article.project-card .project-card-content .bottom-aligned.project-card-tags :last-child {
   margin-right: 0;
 }
-
-img.project-card-img {
+article.project-card img.project-card-img {
   flex-shrink: 0;
   align-self: center;
-  margin: 0;
   object-fit: cover;
   height: 240px;
   width: 422px;

@@ -184,12 +184,7 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"styles/main.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./../fonts/open-sans/open-sans-v18-latin-regular.woff2":[["open-sans-v18-latin-regular.a7fb0f78.woff2","fonts/open-sans/open-sans-v18-latin-regular.woff2"],"fonts/open-sans/open-sans-v18-latin-regular.woff2"],"./../fonts/open-sans/open-sans-v18-latin-regular.woff":[["open-sans-v18-latin-regular.993df29c.woff","fonts/open-sans/open-sans-v18-latin-regular.woff"],"fonts/open-sans/open-sans-v18-latin-regular.woff"],"./../fonts/open-sans/open-sans-v18-latin-600.woff2":[["open-sans-v18-latin-600.1c6b047f.woff2","fonts/open-sans/open-sans-v18-latin-600.woff2"],"fonts/open-sans/open-sans-v18-latin-600.woff2"],"./../fonts/open-sans/open-sans-v18-latin-600.woff":[["open-sans-v18-latin-600.5624cb69.woff","fonts/open-sans/open-sans-v18-latin-600.woff"],"fonts/open-sans/open-sans-v18-latin-600.woff"],"./../fonts/open-sans/open-sans-v18-latin-700.woff2":[["open-sans-v18-latin-700.48ba7f00.woff2","fonts/open-sans/open-sans-v18-latin-700.woff2"],"fonts/open-sans/open-sans-v18-latin-700.woff2"],"./../fonts/open-sans/open-sans-v18-latin-700.woff":[["open-sans-v18-latin-700.07bd07fd.woff","fonts/open-sans/open-sans-v18-latin-700.woff"],"fonts/open-sans/open-sans-v18-latin-700.woff"],"./../fonts/open-sans/open-sans-v18-latin-800.woff2":[["open-sans-v18-latin-800.9f05994e.woff2","fonts/open-sans/open-sans-v18-latin-800.woff2"],"fonts/open-sans/open-sans-v18-latin-800.woff2"],"./../fonts/open-sans/open-sans-v18-latin-800.woff":[["open-sans-v18-latin-800.d2608ba2.woff","fonts/open-sans/open-sans-v18-latin-800.woff"],"fonts/open-sans/open-sans-v18-latin-800.woff"],"./../fonts/nunito/nunito-v14-latin-regular.woff2":[["nunito-v14-latin-regular.13f5aacb.woff2","fonts/nunito/nunito-v14-latin-regular.woff2"],"fonts/nunito/nunito-v14-latin-regular.woff2"],"./../fonts/nunito/nunito-v14-latin-regular.woff":[["nunito-v14-latin-regular.a13de393.woff","fonts/nunito/nunito-v14-latin-regular.woff"],"fonts/nunito/nunito-v14-latin-regular.woff"],"./../fonts/nunito/nunito-v14-latin-600.woff2":[["nunito-v14-latin-600.511727f7.woff2","fonts/nunito/nunito-v14-latin-600.woff2"],"fonts/nunito/nunito-v14-latin-600.woff2"],"./../fonts/nunito/nunito-v14-latin-600.woff":[["nunito-v14-latin-600.1139f046.woff","fonts/nunito/nunito-v14-latin-600.woff"],"fonts/nunito/nunito-v14-latin-600.woff"],"./../fonts/nunito/nunito-v14-latin-700.woff2":[["nunito-v14-latin-700.0a7fd882.woff2","fonts/nunito/nunito-v14-latin-700.woff2"],"fonts/nunito/nunito-v14-latin-700.woff2"],"./../fonts/nunito/nunito-v14-latin-700.woff":[["nunito-v14-latin-700.e1df99d1.woff","fonts/nunito/nunito-v14-latin-700.woff"],"fonts/nunito/nunito-v14-latin-700.woff"],"./../fonts/nunito/nunito-v14-latin-800.woff2":[["nunito-v14-latin-800.1695a8d8.woff2","fonts/nunito/nunito-v14-latin-800.woff2"],"fonts/nunito/nunito-v14-latin-800.woff2"],"./../fonts/nunito/nunito-v14-latin-800.woff":[["nunito-v14-latin-800.91a406f8.woff","fonts/nunito/nunito-v14-latin-800.woff"],"fonts/nunito/nunito-v14-latin-800.woff"],"./../fonts/nunito/nunito-v14-latin-900.woff2":[["nunito-v14-latin-900.6670e4e0.woff2","fonts/nunito/nunito-v14-latin-900.woff2"],"fonts/nunito/nunito-v14-latin-900.woff2"],"./../fonts/nunito/nunito-v14-latin-900.woff":[["nunito-v14-latin-900.be0846cb.woff","fonts/nunito/nunito-v14-latin-900.woff"],"fonts/nunito/nunito-v14-latin-900.woff"],"./../images/github-icon-white-64.png":[["github-icon-white-64.8e89abf4.png","images/github-icon-white-64.png"],"images/github-icon-white-64.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +212,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63035" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53118" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -394,4 +389,4 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/main.48b3db1d.js.map
+//# sourceMappingURL=/background/background.js.map
