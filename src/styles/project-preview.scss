@@ -19,75 +19,80 @@ article.project-card {
   @media screen and (max-width: 500px) {
     font-size: 17px;
   }
-}
 
-div.project-card-header {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: flex-start;
-  justify-content: space-between;
+  * {
+    margin: 0;
+  }
 
-  margin-top: 0.5em;
+  .project-card-content {
+    margin-top: 0.7em;
+    flex-grow: 1;
 
-  .project-card-text {
-    margin-right: 5px;
-    * {
-      margin: 0;
-    }
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
 
     h3 {
       color: $color-text-dark-primary;
       font-weight: 800;
     }
-
     h4 {
       color: $color-text-dark-secondary;
       font-weight: 600;
     }
-
     p {
-      margin-top: 0.75em;
       color: $color-text-dark-secondary;
+      font-weight: 500;
+    }
+
+    .top-aligned {
+      .project-card-header {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+
+        .project-card-links {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: stretch;
+          & > * {
+            margin-right: 0.5em;
+          }
+          :last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .project-card-body {
+        margin-top: 0.5em;
+      }
+    }
+
+    .bottom-aligned.project-card-tags {
+      margin-top: 0.5em;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-content: center;
+      & > * {
+        margin: 0;
+        margin-right: 0.5em;
+        margin-top: 0.35em;
+      }
+      :last-child {
+        margin-right: 0;
+      }
     }
   }
 
-  .project-card-links {
-    margin-top: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
-    & > * {
-      margin: 0;
-      margin-right: 0.5em;
-    }
-    :last-child {
-      margin-right: 0;
-    }
+  img.project-card-img {
+    flex-shrink: 0;
+    align-self: center;
+    object-fit: cover;
+    height: 240px;
+    width: $project-preview-width;
   }
-}
-
-.project-card-tags {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  align-content: center;
-  margin-top: 0.4em;
-  & > * {
-    margin: 0;
-    margin-right: 0.5em;
-    margin-top: 0.35em;
-  }
-  :last-child {
-    margin-right: 0;
-  }
-}
-
-img.project-card-img {
-  flex-shrink: 0;
-  align-self: center;
-  margin: 0;
-  object-fit: cover;
-  height: 240px;
-  width: $project-preview-width;
 }

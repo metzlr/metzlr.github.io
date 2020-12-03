@@ -3,19 +3,18 @@
 mixin project-preview(project)
   article.project-card
     img.project-card-img(src= project.imageURL alt= project.name)
-    .project-card-header
-      .project-card-text
-        h3= project.name
-        h4= project.date
-
-      .project-card-links
-        if project.repoLink
-          a(href= project.repoLink).btn.btn-github-small
-        if project.demoLink
-          a(href= project.demoLink).btn Demo
-        //p= project.description
-
-      
-    .project-card-tags
-      each tag in project.tags
-        .tag= tag
+    .project-card-content
+      .top-aligned
+        .project-card-header
+          h3= project.name
+          .project-card-links
+            if project.repoLink
+              a(href= project.repoLink).btn.btn-github-small
+            if project.demoLink
+              a(href= project.demoLink).btn Demo
+        .project-card-body
+          if project.description
+            p= project.description
+      .project-card-tags.bottom-aligned
+        each tag in project.tags
+          .tag= tag
