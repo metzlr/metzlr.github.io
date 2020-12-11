@@ -308,7 +308,7 @@ a.btn {
   color: #fff;
 }
 .btn.btn-github-small {
-  background-color: #222;
+  background-color: #282828;
   padding: 20px 20px;
   background-image: url(/github-icon-white-64.8e89abf4.png);
   background-size: 30px auto;
@@ -322,7 +322,7 @@ a.btn {
   }
 }
 .btn.btn-github {
-  background-color: #222;
+  background-color: #282828;
   padding-left: 45px;
   background-image: url(/github-icon-white-64.8e89abf4.png);
   background-size: 30px auto;
