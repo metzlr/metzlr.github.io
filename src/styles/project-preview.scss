@@ -52,6 +52,11 @@ article.project-card {
         align-items: center;
         justify-content: space-between;
 
+        h3 {
+          font-size: x-large;
+          margin-right: 10px;
+        }
+
         .project-card-links {
           display: flex;
           flex-direction: row;
@@ -67,12 +72,12 @@ article.project-card {
       }
 
       .project-card-body {
-        margin-top: 0.5em;
+        margin-top: 0.85em;
       }
     }
 
     .bottom-aligned.project-card-tags {
-      margin-top: 0.5em;
+      margin-top: 0.75em;
       display: flex;
       flex-flow: row wrap;
       justify-content: flex-start;
