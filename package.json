@@ -9,7 +9,7 @@
     "clear-build-cache": "rm -rf .cache/ dist/",
     "format": "prettier \"src/**/*.{js,html}\" --write",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "deploy": "parcel build src/index.pug && gh-pages -d dist -b build -m 'Deploying to Github Pages'"
+    "deploy": "parcel build src/index.pug && echo \"metzlr.net\" > dist/CNAME && gh-pages -d dist -b build -m 'Deploying to Github Pages'"
   },
   "repository": {
     "type": "git",
