@@ -110,7 +110,7 @@ article.project-card .project-card-content h4 {
 }
 article.project-card .project-card-content p {
   color: #656670;
-  font-weight: 500;
+  font-weight: 600;
 }
 article.project-card .project-card-content .top-aligned .project-card-header {
   display: flex;
@@ -152,9 +152,11 @@ article.project-card .project-card-content .bottom-aligned.project-card-tags > *
 article.project-card .project-card-content .bottom-aligned.project-card-tags :last-child {
   margin-right: 0;
 }
-article.project-card img.project-card-img {
+article.project-card a {
   flex-shrink: 0;
   align-self: center;
+}
+article.project-card a img.project-card-img {
   object-fit: cover;
   height: 240px;
   width: 422px;
@@ -310,6 +312,17 @@ a.btn {
   border-radius: 9px;
   background-color: #fa6863;
   color: #fff;
+  background-color: #fa6863;
+  transition: background-color 0.15s ease;
+}
+.btn:hover {
+  background-color: #f83832;
+  cursor: pointer;
+}
+.btn:disabled {
+  background-color: #fdc8c6;
+  box-shadow: none;
+  cursor: default;
 }
 .btn.btn-github-small {
   background-color: #282828;
@@ -318,6 +331,8 @@ a.btn {
   background-size: 30px auto;
   background-repeat: no-repeat;
   background-position: center center;
+  background-color: #282828;
+  transition: background-color 0.15s ease;
 }
 @media screen and (max-width: 481px) {
   .btn.btn-github-small {
@@ -325,13 +340,32 @@ a.btn {
     background-size: 22px auto;
   }
 }
+.btn.btn-github-small:hover {
+  background-color: #0f0f0f;
+  cursor: pointer;
+}
+.btn.btn-github-small:disabled {
+  background-color: #5b5b5b;
+  box-shadow: none;
+  cursor: default;
+}
 .btn.btn-github {
-  background-color: #282828;
   padding-left: 45px;
   background-image: url(/github-icon-white-64.8e89abf4.png);
   background-size: 30px auto;
   background-repeat: no-repeat;
   background-position: 8% 50%;
+  background-color: #282828;
+  transition: background-color 0.15s ease;
+}
+.btn.btn-github:hover {
+  background-color: #0f0f0f;
+  cursor: pointer;
+}
+.btn.btn-github:disabled {
+  background-color: #5b5b5b;
+  box-shadow: none;
+  cursor: default;
 }
 @media screen and (max-width: 481px) {
   .btn.btn-github {
@@ -344,10 +378,6 @@ a.btn {
     padding: 10px 10px;
     font-size: 14px;
   }
-}
-.btn:hover {
-  cursor: pointer;
-  color: #ddd;
 }
 .btn:active {
   position: relative;
@@ -366,9 +396,9 @@ a.btn {
   text-decoration: none;
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   border: solid;
-  border-width: 2.5px;
+  border-width: 2px;
   border-radius: 15px;
   color: #ae2eff;
 }
