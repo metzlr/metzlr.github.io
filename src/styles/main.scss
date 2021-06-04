@@ -141,6 +141,21 @@ a {
   }
 }
 
+@mixin button-background-color($background-color) {
+  background-color: $background-color;
+  transition: background-color 0.15s ease;
+  &:hover {
+    background-color: darken($background-color, 10%);
+    cursor: pointer;
+  }
+
+  &:disabled {
+    background-color: lighten($background-color, 20%);
+    box-shadow: none;
+    cursor: default;
+  }
+}
+
 a.btn {
   display: block;
   width: max-content;
@@ -157,6 +172,8 @@ a.btn {
   background-color: $btn-color-primary;
   color: $color-text-light-primary;
 
+  @include button-background-color($btn-color-primary);
+
   &.btn-github-small {
     background-color: #282828;
     padding: 20px 20px;
@@ -169,15 +186,18 @@ a.btn {
       padding: 17px 17px;
       background-size: 22px auto;
     }
+
+    @include button-background-color(#282828);
   }
 
   &.btn-github {
-    background-color: #282828;
     padding-left: 45px;
     background-image: url(../images/github-icon-white-64.png);
     background-size: 30px auto;
     background-repeat: no-repeat;
     background-position: 8% 50%;
+
+    @include button-background-color(#282828);
 
     @media screen and (max-width: $sm) {
       padding-left: 35px;
@@ -190,10 +210,6 @@ a.btn {
     font-size: $btn-font-size-sm;
   }
 
-  &:hover {
-    cursor: pointer;
-    color: $color-text-light-hover;
-  }
   &:active {
     position: relative;
     top: 1px;
@@ -214,7 +230,7 @@ a.btn {
   font-family: $tag-font-family;
   font-weight: $tag-font-weight;
   border: solid;
-  border-width: 2.5px;
+  border-width: 2px;
   border-radius: 15px;
   color: $tag-color-primary;
   @media screen and (max-width: $sm) {

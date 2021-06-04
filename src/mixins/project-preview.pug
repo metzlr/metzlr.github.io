@@ -2,7 +2,8 @@
 
 mixin project-preview(project)
   article.project-card
-    img.project-card-img(src= project.imageURL alt= project.name)
+    a(href= project.repoLink)
+      img.project-card-img(src= project.imageURL alt= project.name)
     .project-card-content
       .top-aligned
         .project-card-header
