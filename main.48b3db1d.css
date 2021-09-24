@@ -110,13 +110,17 @@ article.project-card .project-card-content h4 {
 }
 article.project-card .project-card-content p {
   color: #656670;
-  font-weight: 500;
+  font-weight: 600;
 }
 article.project-card .project-card-content .top-aligned .project-card-header {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
+}
+article.project-card .project-card-content .top-aligned .project-card-header h3 {
+  font-size: x-large;
+  margin-right: 10px;
 }
 article.project-card .project-card-content .top-aligned .project-card-header .project-card-links {
   display: flex;
@@ -131,10 +135,10 @@ article.project-card .project-card-content .top-aligned .project-card-header .pr
   margin-right: 0;
 }
 article.project-card .project-card-content .top-aligned .project-card-body {
-  margin-top: 0.5em;
+  margin-top: 0.85em;
 }
 article.project-card .project-card-content .bottom-aligned.project-card-tags {
-  margin-top: 0.5em;
+  margin-top: 0.75em;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
@@ -148,9 +152,11 @@ article.project-card .project-card-content .bottom-aligned.project-card-tags > *
 article.project-card .project-card-content .bottom-aligned.project-card-tags :last-child {
   margin-right: 0;
 }
-article.project-card img.project-card-img {
+article.project-card a {
   flex-shrink: 0;
   align-self: center;
+}
+article.project-card a img.project-card-img {
   object-fit: cover;
   height: 240px;
   width: 422px;
@@ -269,7 +275,22 @@ a:visited {
   font-weight: 700;
 }
 .profile .profile-text .socials {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
   margin-top: 1em;
+}
+.profile .profile-text .socials * + * {
+  margin-top: 0;
+  margin-left: 0.5em;
+}
+@media screen and (max-width: 530px) {
+  .profile .profile-text .socials {
+    justify-content: center;
+  }
+  .profile .profile-text .socials * + * {
+    margin-top: 0;
+  }
 }
 @media screen and (max-width: 481px) {
   .profile .profile-text {
@@ -306,14 +327,27 @@ a.btn {
   border-radius: 9px;
   background-color: #fa6863;
   color: #fff;
+  background-color: #fa6863;
+  transition: background-color 0.15s ease;
+}
+.btn:hover {
+  background-color: #f83832;
+  cursor: pointer;
+}
+.btn:disabled {
+  background-color: #fdc8c6;
+  box-shadow: none;
+  cursor: default;
 }
 .btn.btn-github-small {
-  background-color: #222;
+  background-color: #282828;
   padding: 20px 20px;
   background-image: url(/github-icon-white-64.8e89abf4.png);
   background-size: 30px auto;
   background-repeat: no-repeat;
   background-position: center center;
+  background-color: #282828;
+  transition: background-color 0.15s ease;
 }
 @media screen and (max-width: 481px) {
   .btn.btn-github-small {
@@ -321,13 +355,32 @@ a.btn {
     background-size: 22px auto;
   }
 }
+.btn.btn-github-small:hover {
+  background-color: #0f0f0f;
+  cursor: pointer;
+}
+.btn.btn-github-small:disabled {
+  background-color: #5b5b5b;
+  box-shadow: none;
+  cursor: default;
+}
 .btn.btn-github {
-  background-color: #222;
   padding-left: 45px;
   background-image: url(/github-icon-white-64.8e89abf4.png);
   background-size: 30px auto;
   background-repeat: no-repeat;
   background-position: 8% 50%;
+  background-color: #282828;
+  transition: background-color 0.15s ease;
+}
+.btn.btn-github:hover {
+  background-color: #0f0f0f;
+  cursor: pointer;
+}
+.btn.btn-github:disabled {
+  background-color: #5b5b5b;
+  box-shadow: none;
+  cursor: default;
 }
 @media screen and (max-width: 481px) {
   .btn.btn-github {
@@ -335,19 +388,37 @@ a.btn {
     background-size: 22px auto;
   }
 }
+.btn.btn-linkedin {
+  height: 39px;
+  width: 100px;
+  background-image: url(/linkedin-white.fc86444c.png);
+  background-size: 80px auto;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  color: white;
+  background-color: #2f77fc;
+  transition: background-color 0.15s ease;
+}
+.btn.btn-linkedin:hover {
+  background-color: #0458f4;
+  cursor: pointer;
+}
+.btn.btn-linkedin:disabled {
+  background-color: #94b9fd;
+  box-shadow: none;
+  cursor: default;
+}
+@media screen and (max-width: 481px) {
+  .btn.btn-linkedin {
+    height: 34px;
+    background-size: 70px auto;
+  }
+}
 @media screen and (max-width: 481px) {
   .btn {
     padding: 10px 10px;
     font-size: 14px;
   }
-}
-.btn:hover {
-  cursor: pointer;
-  color: #ddd;
-}
-.btn:active {
-  position: relative;
-  top: 1px;
 }
 
 .section-header {
@@ -362,9 +433,9 @@ a.btn {
   text-decoration: none;
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   border: solid;
-  border-width: 2.5px;
+  border-width: 2px;
   border-radius: 15px;
   color: #ae2eff;
 }
