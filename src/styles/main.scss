@@ -75,7 +75,7 @@ a {
 .profile {
   background-color: $color-bg-light;
   border: none;
-  max-width: 600px;
+  max-width: 400px;
   margin: auto;
   border-radius: 15px;
   padding: 15px;
@@ -110,6 +110,12 @@ a {
   }
 
   .profile-text {
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+
     & > * {
       margin: 0;
     }
