@@ -12,13 +12,9 @@ article.project-card {
   background-color: $color-bg-light;
   border-style: solid;
   border-width: 0px;
-  border-radius: 15px;
+  border-radius: $card-border-radius;
   overflow: hidden;
   box-shadow: $box-shadow;
-
-  @media screen and (max-width: 500px) {
-    font-size: 17px;
-  }
 
   * {
     margin: 0;
@@ -32,17 +28,8 @@ article.project-card {
     flex-flow: column nowrap;
     justify-content: space-between;
 
-    h3 {
-      color: $color-text-dark-primary;
-      font-weight: 800;
-    }
-    h4 {
-      color: $color-text-dark-secondary;
-      font-weight: 600;
-    }
     p {
       color: $color-text-dark-secondary;
-      font-weight: 600;
     }
 
     .top-aligned {
@@ -52,8 +39,7 @@ article.project-card {
         align-items: center;
         justify-content: space-between;
 
-        h3 {
-          font-size: x-large;
+        h2 {
           margin-right: 10px;
         }
 

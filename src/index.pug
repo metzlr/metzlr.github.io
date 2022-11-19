@@ -25,12 +25,13 @@ html(lang="en")
       div.profile
         //- img.profile-image(src="https://github.com/metzlr.png" alt="metzlr")
         div.profile-text
-          h2.name Reed Metzler-Gilbertz
-          h4.title Software Engineer
-
+          h1.name Reed Metzler-Gilbertz
+          
           div.socials
             a.btn.btn-github(href="https://github.com/metzlr") GitHub
             a.btn.btn-linkedin(href="http://www.linkedin.com/in/reedmg/")
+
+          p This is a page with some stuff I've made.
         
       div.projects-container
         include mixins/project-preview
@@ -38,19 +39,26 @@ html(lang="en")
           var projects = [
             {
               name: "DormDesign",
-              description: "A realtime web app where roommates can collaboratively design their dorm room",
-              tags: ["React", "Node.js", "Express", "Rethinkdb"],
+              description: "A realtime web app to help roommates collaboratively design their dorm room",
+              tags: ["React", "Node.js", "MongoDB", "Redis"],
               imageURL: "/images/projects/dormdesign/preview.png",
               repoLink: "https://github.com/gmisail/dormdesign",
               demoLink: "http://dormdesign.app"
             },
             {
               name: "Portals",
-              description: "An implementation of functional, fully recursive portal rendering using WebGL and THREE.js",
-              tags: ["THREE.js", "WebGL", "JavaScript"],
+              description: "Interactive, recursive portal rendering using WebGL and THREE.js",
+              tags: ["THREE.js", "WebGL"],
               imageURL: "/images/projects/portals/preview.png",
               repoLink: "https://github.com/metzlr/portals",
               demoLink: "https://metzlr.github.io/portals",
+            },
+            {
+              name: "MovieStash",
+              description: "Minimalist movie library that's synced across devices",
+              tags: ["SwiftUI", "CloudKit"],
+              imageURL: "/images/projects/moviestash/preview.png",
+              repoLink: "https://github.com/metzlr/moviestash",
             },
             {
               name: "Encrypted Journal",
@@ -62,42 +70,35 @@ html(lang="en")
             {
               name: "Maze Mesh Generator",
               description: "Generates and displays random 2D and 3D maze meshes",
-              tags: ["C++", "WebGL", "JavaScript"],
+              tags: ["C++", "WebGL"],
               imageURL: "/images/projects/maze-generator/preview-large.png",
               repoLink: "https://github.com/metzlr/maze-generator",
               // TODO: Uncomment demoLink once demo has been fixed
               //- demoLink: "https://metzlr.github.io/maze-generator",
             },
             {
-              name: "MovieStash",
-              description: "An IOS app for finding and keeping track of movies",
-              tags: ["Swift", "SwiftUI", "CloudKit"],
-              imageURL: "/images/projects/moviestash/preview.png",
-              repoLink: "https://github.com/metzlr/moviestash",
-            },
-            {
               name: "3D Function Grapher",
-              description: "Visualizes 3D function surfaces in an online web environment",
-              tags: ["JavaScript", "THREE.js", "Parcel"],
+              description: "Web app that visualizes 3D surfaces",
+              tags: ["THREE.js", "Parcel"],
               imageURL: "/images/projects/grapher3D/preview.png",
               repoLink: "https://github.com/metzlr/grapher3D",
               demoLink: "https://metzlr.github.io/grapher3D",
             },
             {
-              name: "MusicFeed",
-              description: "Site that uses the Spotify API to find new music from artists that users follow or search for",
-              tags: ["Django", "Bootstrap", "Apache"],
-              imageURL: "/images/projects/musicfeed/preview.png",
-              repoLink: "https://github.com/metzlr/MusicFeed",
-              demoLink: "http://musicfeed.info/",
-            },
-            {
               name: "Delaunay-JS",
-              description: "A visualization using my implementation of an algorithm that generates Delaunay triangulations",
+              description: "A visualization and implementation of a Delaunay triangulation algorithm",
               tags: ["JavaScript"],
               imageURL: "/images/projects/delaunay-js/preview.png",
               repoLink: "https://github.com/metzlr/delaunay-js",
               demoLink: "https://metzlr.github.io/delaunay-js",
+            },
+            {
+              name: "MusicFeed",
+              description: "Site that uses the Spotify API to find new music from artists",
+              tags: ["Django", "Bootstrap", "Apache"],
+              imageURL: "/images/projects/musicfeed/preview.png",
+              repoLink: "https://github.com/metzlr/MusicFeed",
+              //- demoLink: "http://musicfeed.info/",
             },
           ]
         each project in projects

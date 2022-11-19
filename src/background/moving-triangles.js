@@ -74,16 +74,23 @@ const main = (function () {
   const fps = 60;
   const circleColor = "#edededbb";
   const drawEdges = false;
-  const lineColor = "#B5B0FB66";
   const lineWidth = 1;
-  // const triangleColorGradient = [
-  //   [87, 75, 250],
-  //   [87, 250, 160],
-  // ];
-  const triangleColorGradient = [
-    [0, 219, 222],
-    [252, 0, 255],
+  const gradientOptions = [
+    [
+      [87, 250, 160],
+      [87, 75, 250],
+    ],
+    [
+      [200, 200, 200],
+      [40, 40, 40],
+    ],
+    [
+      [0, 219, 222],
+      [252, 0, 255],
+    ],
   ];
+  const triangleColorGradient =
+    gradientOptions[Math.floor(gradientOptions.length * Math.random())];
 
   // Non-constants
   let numCircles,

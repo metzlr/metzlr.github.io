@@ -2,15 +2,14 @@
 
 mixin project-preview(project)
   article.project-card
-    a(href= project.repoLink)
+    a(href= project.repoLink, title="Go to GitHub repository")
       img.project-card-img(src= project.imageURL alt= project.name)
     .project-card-content
       .top-aligned
         .project-card-header
-          h3= project.name
+          a(href= project.repoLink, title="Go to GitHub repository")
+            h2= project.name
           .project-card-links
-            if project.repoLink
-              a(href= project.repoLink).btn.btn-github-small
             if project.demoLink
               a(href= project.demoLink).btn Demo
         .project-card-body

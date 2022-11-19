@@ -21,7 +21,7 @@ body {
   color: $color-text-light-primary;
 
   @media screen and (max-width: $sm) {
-    font-size: $font-size - 1;
+    font-size: $font-size-sm;
   }
 }
 
@@ -35,10 +35,22 @@ h3,
 h4,
 h5,
 h6 {
-  color: $color-text-light-primary;
+  color: $color-text-dark-primary;
   line-height: $header-line-height;
   font-family: $header-font;
-  font-weight: $header-font-weight;
+}
+
+h1 {
+  font-weight: $h1-font-weight;
+  font-size: 1.5rem;
+}
+h2 {
+  font-weight: $h2-font-weight;
+  font-size: 1.3rem;
+}
+h3 {
+  font-weight: $h3-font-weight;
+  font-size: 1rem;
 }
 
 a {
@@ -46,6 +58,11 @@ a {
   text-decoration: none;
   &:visited {
     text-decoration: none;
+  }
+  h1,h2,h3 {
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -77,7 +94,7 @@ a {
   border: none;
   max-width: 400px;
   margin: auto;
-  border-radius: 15px;
+  border-radius: $card-border-radius;
   padding: 15px;
   box-shadow: $box-shadow;
 
@@ -121,19 +138,19 @@ a {
       margin: 0;
     }
 
-    .title {
-      font-weight: 700;
+    .name {
+      margin-bottom: 5px;
     }
 
     .socials {
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
-      margin-top: 1em;
+      margin-bottom: 30px;
 
       * + * {
         margin-top: 0;
-        margin-left: 0.5em;
+        margin-left: 10px;
       }
 
       @media screen and (max-width: 530px) {
@@ -184,69 +201,41 @@ a.btn {
 }
 
 .btn {
-  padding: 12px 10px 11px 10px;
+  padding: 8px 10px;
   text-decoration: none;
   font-size: $btn-font-size;
   font-family: $btn-font-family;
   font-weight: $btn-font-weight;
   border: none;
-  border-radius: 9px;
+  border-radius: $btn-border-radius;
   background-color: $btn-color-primary;
   color: $color-text-light-primary;
 
   @include button-background-color($btn-color-primary);
 
-  &.btn-github-small {
-    background-color: #282828;
-    padding: 20px 20px;
-    background-image: url(../images/github-icon-white-64.png);
-    background-size: 30px auto;
-    background-repeat: no-repeat;
-    background-position: center center;
-
-    @media screen and (max-width: $sm) {
-      padding: 17px 17px;
-      background-size: 22px auto;
-    }
-
-    @include button-background-color(#282828);
-  }
-
   &.btn-github {
-    padding-left: 45px;
+    font-size: 15px;
+    padding-left: 37px;
+    width: 100px;
+    height: 31px;
     background-image: url(../images/github-icon-white-64.png);
-    background-size: 30px auto;
+    background-size: 22px auto;
     background-repeat: no-repeat;
-    background-position: 8% 50%;
+    background-position: 10% 50%;
 
     @include button-background-color(#282828);
-
-    @media screen and (max-width: $sm) {
-      padding-left: 35px;
-      background-size: 22px auto;
-    }
   }
 
   &.btn-linkedin {
-    height: 39px;
     width: 100px;
+    height: 31px;
     background-image: url(../images/linkedin-white.png);
-    background-size: 80px auto;
+    background-size: 70px auto;
     background-repeat: no-repeat;
     background-position: 50% 50%;
 
     color: white;
     @include button-background-color(#2f77fc);
-
-    @media screen and (max-width: $sm) {
-      height: 34px;
-      background-size: 70px auto;
-    }
-  }
-
-  @media screen and (max-width: $sm) {
-    padding: 10px 10px;
-    font-size: $btn-font-size-sm;
   }
 }
 
@@ -260,7 +249,7 @@ a.btn {
   padding: 3px 8px 4px 8px;
   text-align: center;
   text-decoration: none;
-  font-size: $tag-font-size;
+  font-size: 0.8rem;
   font-family: $tag-font-family;
   font-weight: $tag-font-weight;
   border: solid;
@@ -270,6 +259,5 @@ a.btn {
   @media screen and (max-width: $sm) {
     border-width: 2px;
     padding: 2px 7px 3px 7px;
-    font-size: $tag-font-size-sm;
   }
 }

@@ -6,34 +6,34 @@ $color-text-light-hover: #ddd;
 $color-text-dark-primary: #47484f;
 $color-text-dark-secondary: #656670;
 
-$btn-color-primary: #fa6863;
-$btn-font-family: "Open Sans", sans-serif;
-$btn-font-weight: 700;
-$btn-font-size: 16px;
-$btn-font-size-sm: 14px;
-$btn-font: 700 16px "Open Sans", sans-serif;
-$btn-font-sm: 700 14px "Open Sans", sans-serif;
-
-$tag-color-primary: #ae2eff; //#913cc7; //#fade4b; //#dffa4b; //#3c34ad; //#bd58fd; //#fab463;
-$tag-font-size: 14px;
-$tag-font-size-sm: 13px;
-$tag-font-family: "Open Sans", sans-serif;
-$tag-font-weight: 600;
-
 $sm: 481px;
 $md: 769px;
 $lg: 1025px;
 
-$animated-background-cutoff: 450px;
+$font-size: 17px;
+$font-size-sm: 15px;
 
-$font-size: 18px;
-$header-font: "Nunito", sans-serif;
-$header-font-weight: 900;
+$header-font: "Open Sans", sans-serif;
+$h1-font-weight: 800;
+$h2-font-weight: 700;
+$h3-font-weight: 600;
 $header-line-height: 1.4;
 $body-font: "Nunito", sans-serif;
-$body-font-weight: 500;
+$body-font-weight: 600;
 $body-line-height: 1;
-
 $box-shadow: 0px 0px 18px 5px rgba(0, 0, 0, 0.3);
+$card-border-radius: 10px;
+
+$btn-color-primary: #fa6863;
+$btn-font-family: "Open Sans", sans-serif;
+$btn-font-weight: 700;
+$btn-font-size: 0.9rem;
+$btn-border-radius: 6px;
+
+$tag-color-primary: #ae2eff;
+$tag-font-family: "Open Sans", sans-serif;
+$tag-font-weight: 600;
+
+$animated-background-cutoff: 450px;
 
 $project-preview-width: 422px;
