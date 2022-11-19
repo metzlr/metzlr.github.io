@@ -787,13 +787,9 @@ var main = function () {
   var fps = 60;
   var circleColor = "#edededbb";
   var drawEdges = false;
-  var lineColor = "#B5B0FB66";
-  var lineWidth = 1; // const triangleColorGradient = [
-  //   [87, 75, 250],
-  //   [87, 250, 160],
-  // ];
-
-  var triangleColorGradient = [[0, 219, 222], [252, 0, 255]]; // Non-constants
+  var lineWidth = 1;
+  var gradientOptions = [[[87, 250, 160], [87, 75, 250]], [[200, 200, 200], [40, 40, 40]], [[0, 219, 222], [252, 0, 255]]];
+  var triangleColorGradient = gradientOptions[Math.floor(gradientOptions.length * Math.random())]; // Non-constants
 
   var numCircles, circleCurveRateRange, circleSpeedRange, circleRadiusRange, circles, idCounter, points, delaunay; // Setup scene
 
@@ -997,7 +993,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65365" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63994" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

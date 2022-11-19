@@ -81,14 +81,9 @@ article.project-card {
   background-color: #fff;
   border-style: solid;
   border-width: 0px;
-  border-radius: 15px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 0px 18px 5px rgba(0, 0, 0, 0.3);
-}
-@media screen and (max-width: 500px) {
-  article.project-card {
-    font-size: 17px;
-  }
 }
 article.project-card * {
   margin: 0;
@@ -100,17 +95,8 @@ article.project-card .project-card-content {
   flex-flow: column nowrap;
   justify-content: space-between;
 }
-article.project-card .project-card-content h3 {
-  color: #47484f;
-  font-weight: 800;
-}
-article.project-card .project-card-content h4 {
-  color: #656670;
-  font-weight: 600;
-}
 article.project-card .project-card-content p {
   color: #656670;
-  font-weight: 600;
 }
 article.project-card .project-card-content .top-aligned .project-card-header {
   display: flex;
@@ -118,8 +104,7 @@ article.project-card .project-card-content .top-aligned .project-card-header {
   align-items: center;
   justify-content: space-between;
 }
-article.project-card .project-card-content .top-aligned .project-card-header h3 {
-  font-size: x-large;
+article.project-card .project-card-content .top-aligned .project-card-header h2 {
   margin-right: 10px;
 }
 article.project-card .project-card-content .top-aligned .project-card-header .project-card-links {
@@ -174,15 +159,15 @@ html,
 body {
   margin: 0;
   font-family: "Nunito", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1;
-  font-size: 18px;
+  font-size: 17px;
   color: #fff;
 }
 @media screen and (max-width: 481px) {
   html,
 body {
-    font-size: 17px;
+    font-size: 15px;
   }
 }
 
@@ -196,10 +181,24 @@ h3,
 h4,
 h5,
 h6 {
-  color: #fff;
+  color: #47484f;
   line-height: 1.4;
-  font-family: "Nunito", sans-serif;
-  font-weight: 900;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 a {
@@ -208,6 +207,9 @@ a {
 }
 a:visited {
   text-decoration: none;
+}
+a h1:hover, a h2:hover, a h3:hover {
+  text-decoration: underline;
 }
 
 #background-canvas {
@@ -239,7 +241,7 @@ a:visited {
   border: none;
   max-width: 400px;
   margin: auto;
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 15px;
   box-shadow: 0px 0px 18px 5px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -279,18 +281,18 @@ a:visited {
 .profile .profile-text > * {
   margin: 0;
 }
-.profile .profile-text .title {
-  font-weight: 700;
+.profile .profile-text .name {
+  margin-bottom: 5px;
 }
 .profile .profile-text .socials {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  margin-top: 1em;
+  margin-bottom: 30px;
 }
 .profile .profile-text .socials * + * {
   margin-top: 0;
-  margin-left: 0.5em;
+  margin-left: 10px;
 }
 @media screen and (max-width: 530px) {
   .profile .profile-text .socials {
@@ -326,13 +328,13 @@ a.btn {
 }
 
 .btn {
-  padding: 12px 10px 11px 10px;
+  padding: 8px 10px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 0.9rem;
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   border: none;
-  border-radius: 9px;
+  border-radius: 6px;
   background-color: #fa6863;
   color: #fff;
   background-color: #fa6863;
@@ -347,37 +349,15 @@ a.btn {
   box-shadow: none;
   cursor: default;
 }
-.btn.btn-github-small {
-  background-color: #282828;
-  padding: 20px 20px;
-  background-image: url(/github-icon-white-64.8e89abf4.png);
-  background-size: 30px auto;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-color: #282828;
-  transition: background-color 0.15s ease;
-}
-@media screen and (max-width: 481px) {
-  .btn.btn-github-small {
-    padding: 17px 17px;
-    background-size: 22px auto;
-  }
-}
-.btn.btn-github-small:hover {
-  background-color: #0f0f0f;
-  cursor: pointer;
-}
-.btn.btn-github-small:disabled {
-  background-color: #5b5b5b;
-  box-shadow: none;
-  cursor: default;
-}
 .btn.btn-github {
-  padding-left: 45px;
+  font-size: 15px;
+  padding-left: 37px;
+  width: 100px;
+  height: 31px;
   background-image: url(/github-icon-white-64.8e89abf4.png);
-  background-size: 30px auto;
+  background-size: 22px auto;
   background-repeat: no-repeat;
-  background-position: 8% 50%;
+  background-position: 10% 50%;
   background-color: #282828;
   transition: background-color 0.15s ease;
 }
@@ -390,17 +370,11 @@ a.btn {
   box-shadow: none;
   cursor: default;
 }
-@media screen and (max-width: 481px) {
-  .btn.btn-github {
-    padding-left: 35px;
-    background-size: 22px auto;
-  }
-}
 .btn.btn-linkedin {
-  height: 39px;
   width: 100px;
+  height: 31px;
   background-image: url(/linkedin-white.fc86444c.png);
-  background-size: 80px auto;
+  background-size: 70px auto;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   color: white;
@@ -416,18 +390,6 @@ a.btn {
   box-shadow: none;
   cursor: default;
 }
-@media screen and (max-width: 481px) {
-  .btn.btn-linkedin {
-    height: 34px;
-    background-size: 70px auto;
-  }
-}
-@media screen and (max-width: 481px) {
-  .btn {
-    padding: 10px 10px;
-    font-size: 14px;
-  }
-}
 
 .section-header {
   margin-left: 1rem;
@@ -439,7 +401,7 @@ a.btn {
   padding: 3px 8px 4px 8px;
   text-align: center;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 0.8rem;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   border: solid;
@@ -451,7 +413,6 @@ a.btn {
   .tag {
     border-width: 2px;
     padding: 2px 7px 3px 7px;
-    font-size: 13px;
   }
 }
 
